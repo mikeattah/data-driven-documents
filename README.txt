@@ -7,6 +7,6 @@ I am learning:
 I have learnt:
 	Git
 
-Please feel free to check them all out and leave constructive critics.
+Please feel free to check them all out and make inputs if you want to.
 
 Thank you!
