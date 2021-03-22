@@ -10,3 +10,5 @@ I have learnt:
 Please feel free to check them all out and make inputs if you want to.
 
 Thank you!
+
+Mike Attah

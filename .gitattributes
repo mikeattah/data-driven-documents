@@ -1,0 +1,4 @@
+﻿*.pbxproj binary
+*.docx diff=word
+*.png diff=exif
+*.txt ident
