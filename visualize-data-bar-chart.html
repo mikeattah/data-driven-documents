@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Visualize Data with a Bar Chart" />
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Orbitron"
+    />
+    <!-- D3 Library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <title>Visualize Data with a Bar Chart</title>
+    <style>
+      body {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+        background-color: #483d8b;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #container {
+        height: 90vh;
+        width: 70vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
+      }
+      #title {
+        height:  5%;
+        width: 100%;
+        text-align: center;
+        font-family: Roboto, Montserrat, sans-serif;
+      }
+      .canvas {
+        /*border: 1px solid black;*/
+        color: black;
+      }
+      .bars:hover {
+        fill: whitesmoke;
+      }
+      .text {
+        box-shadow: 0 0 5px 5px red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <noscript>You need to enable JavaScript to run this app.</noscript> -->
+    <div id="container">
+      <h1 id="title">United States GDP</h1>
+    </div>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script>
+      document.addEventListener(`DOMContentLoaded`, function() {
+
+        const url = `https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json`;
+
+        // elements will always have a 2:1 width to height ratio
+        // no matter what the zoom level is
+        const w = 900;
+        const h = 600;
+
+        const req = new XMLHttpRequest();
+
+        req.open(`GET`, url, true);
+        req.send();
+        req.onload = function() {
+          const json = JSON.parse(req.responseText);
+          const dataset = json.data;
+
+          const padding = 50;
+
+          const maxX = d3.max(dataset, (d, i) => parseInt(d[0].slice(0,4)));
+          const minX = d3.min(dataset, (d, i) => parseInt(d[0].slice(0,4)));
+
+          const maxY = d3.max(dataset, (d, i) => d[1]);
+          const minY = d3.min(dataset, (d, i) => d[1]);
+
+          const xScale = d3.scaleLinear()
+            .domain([minX, maxX])
+            .range([padding, w - padding]);
+
+          const yScale = d3.scaleLinear()
+            .domain([minY, maxY])
+            .range([h - padding, padding]);
+
+          console.log(dataset, dataset.length, maxX, minX, maxY, minY);
+
+          const svg = d3.select(`div`)
+                          .append(`svg`)
+                            .attr(`width`, w)
+                            .attr(`height`, h)
+                            .attr(`class`, `canvas`);
+
+          const g = svg.selectAll(`g`)
+                          .data(dataset)
+                          .enter()
+                          .append(`g`);
+
+            g.append(`rect`, (d, i) => d[1])
+              .attr(`x`, (d, i) => i + xScale(parseFloat(d[0].slice(0,4))))
+              .attr(`y`, padding)
+              .attr(`width`, 2)
+              .attr(`height`, (d, i) => {return h - yScale(d[1])})
+              .style(`fill`, `#0070f3`)
+              .style(`class`, `bars`);
+
+            g.append(`title`)
+              .text((d) => {
+                return (
+                  d[0].slice(0, 4) + ` ` +
+                  `$` + d[1] + ` Billion`
+                  )
+              })
+              .attr(`class`, `text`);
+
+          const x = svg.append(`g`);
+          const y = svg.append(`g`);
+
+          const x_axis = d3.axisBottom()
+                            .scale(xScale)
+                            .tickFormat(d3.format("d"));
+
+          const y_axis = d3.axisLeft()
+                            .scale(yScale);
+            
+            x.attr(`transform`, (d, i) => {
+                return `translate(0,` + padding * 11 + `)`;
+              })
+              .attr(`id`, `x-axis`)
+              .call(x_axis);
+
+            y.attr(`transform`, (d, i) => {
+                return `translate(` + padding + `,0)`;
+              })
+            .attr(`id`, `y-axis`)
+              .call(y_axis);
+            
+        }
+      });
+    </script>
+  </body>
+</html>

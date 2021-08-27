@@ -1,14 +1,3 @@
-Hello everyone!
+# Data Visualization with D3
 
-mykewillcodeit is a repository for all the projects I am working on as I build my skills in software engineering.
-
-I am learning:
-	HTML
-I have learnt:
-	Git
-
-Please feel free to check them all out and make inputs if you want to.
-
-Thank you!
-
-Mike Attah
+This repo includes projects for FCC Data Visualization Certification.
