@@ -7,7 +7,7 @@
     <meta name="description" content="Visualize Data with a Bar Chart" />
     <!-- D3 Library -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <title>Visualize Data with a Choropleth Map</title>
+    <title>Visualize Data with a Bar Chart</title>
     <style>
       body {
         box-sizing: border-box;
@@ -15,18 +15,14 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-        width: 100vw;
-        background-color: #483d8b;
-        font-family: Roboto, Montserrat, sans-serif;
       }
       * {
         margin: 0;
         padding: 0;
       }
       #container {
-        height: 90vh;
-        width: 90vw;
+        height: 95vh;
+        width: 85vw;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -38,6 +34,7 @@
         height:  5%;
         width: 100%;
         text-align: center;
+        font-family: Roboto, Montserrat, sans-serif;
       }
       .canvas {
         /*border: 1px solid black;*/
@@ -52,20 +49,12 @@
     </style>
   </head>
   <body>
-    <!-- <noscript>You need to enable JavaScript to run this app.</noscript> -->
-    <div id="container">
-      <h1 id="title">United States Educational Attainment</h1>
-      <p>Percentage of adults age 25 and older with a bachelor's degree or higher (2010-2014)</p>
-    </div>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     <script>
       document.addEventListener(`DOMContentLoaded`, function() {
 
-        const user = `https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/for_user_education.json`;
-        const counties = `https://cdn.freecodecamp.org/testable-projects-fcc/data/choropleth_map/counties.json`;
+        const url = `https://mikeattah.com/techstack.json`;
 
-        // elements will always have a 2:1 width to height ratio
-        // no matter what the zoom level is
         const w = 900;
         const h = 600;
 
@@ -95,7 +84,7 @@
 
           console.log(dataset, dataset.length, maxX, minX, maxY, minY);
 
-          const svg = d3.select(`div`)
+          const svg = d3.select(`body`)
                           .append(`svg`)
                             .attr(`width`, w)
                             .attr(`height`, h)
@@ -107,10 +96,16 @@
                           .append(`g`);
 
             g.append(`rect`, (d, i) => d[1])
-              .attr(`x`, (d, i) => i + xScale(parseFloat(d[0].slice(0,4))))
-              .attr(`y`, padding)
+
+              // .attr(`x`, (d, i) => xScale(parseFloat(d[0].slice(0,4))))
+              // .attr(`y`, (d, i) => yScale(d[1]))
+              // .attr(`width`, 2)
+              // .attr(`height`, (d, i) => {return d[1] * 0.03})
+
+              .attr(`x`, (d, i) => xScale(parseFloat(d[0].slice(0,4))))
+              .attr(`y`, h - padding)
               .attr(`width`, 2)
-              .attr(`height`, (d, i) => {return h - yScale(d[1])})
+              .attr(`height`, (d, i) => yScale(0) - yScale(d[1]))
               .style(`fill`, `#0070f3`)
               .style(`class`, `bars`);
 

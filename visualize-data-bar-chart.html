@@ -5,11 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Visualize Data with a Bar Chart" />
-    <!-- Google Fonts -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Orbitron"
-    />
     <!-- D3 Library -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <title>Visualize Data with a Bar Chart</title>
@@ -29,8 +24,8 @@
         padding: 0;
       }
       #container {
-        height: 90vh;
-        width: 70vw;
+        height: 95vh;
+        width: 85vw;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -67,8 +62,6 @@
 
         const url = `https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json`;
 
-        // elements will always have a 2:1 width to height ratio
-        // no matter what the zoom level is
         const w = 900;
         const h = 600;
 
@@ -81,6 +74,8 @@
           const dataset = json.data;
 
           const padding = 50;
+
+          const barWidth = (w - 2 * padding) / dataset.length;
 
           const maxX = d3.max(dataset, (d, i) => parseInt(d[0].slice(0,4)));
           const minX = d3.min(dataset, (d, i) => parseInt(d[0].slice(0,4)));
@@ -110,10 +105,16 @@
                           .append(`g`);
 
             g.append(`rect`, (d, i) => d[1])
-              .attr(`x`, (d, i) => i + xScale(parseFloat(d[0].slice(0,4))))
-              .attr(`y`, padding)
+
+              // .attr(`x`, (d, i) => xScale(parseFloat(d[0].slice(0,4))))
+              // .attr(`y`, (d, i) => yScale(d[1]))
+              // .attr(`width`, 2)
+              // .attr(`height`, (d, i) => {return d[1] * 0.03})
+
+              .attr(`x`, (d, i) => xScale(parseFloat(d[0].slice(0,4))))
+              .attr(`y`, h - padding)
               .attr(`width`, 2)
-              .attr(`height`, (d, i) => {return h - yScale(d[1])})
+              .attr(`height`, (d, i) => yScale(0) - yScale(d[1]))
               .style(`fill`, `#0070f3`)
               .style(`class`, `bars`);
 
