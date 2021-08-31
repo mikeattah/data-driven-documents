@@ -7,7 +7,7 @@
     <meta name="description" content="Visualize Data with a Bar Chart" />
     <!-- D3 Library -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <title>Visualize Data with a Bar Chart</title>
+    <title>Visualize Tech Stack with a Treemap Diagram</title>
     <style>
       body {
         box-sizing: border-box;
@@ -20,27 +20,11 @@
         margin: 0;
         padding: 0;
       }
-      #container {
-        height: 95vh;
-        width: 85vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: white;
-        box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
-      }
-      #title {
-        height:  5%;
-        width: 100%;
-        text-align: center;
-        font-family: Roboto, Montserrat, sans-serif;
-      }
       .canvas {
         /*border: 1px solid black;*/
         color: black;
       }
-      .bars:hover {
+      .box:hover {
         fill: whitesmoke;
       }
       .text {
@@ -49,14 +33,13 @@
     </style>
   </head>
   <body>
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     <script>
       document.addEventListener(`DOMContentLoaded`, function() {
 
-        const url = `https://mikeattah.com/techstack.json`;
+        const url = `https://mikeattahweb.vercel.app/techstack.json`;
 
-        const w = 900;
-        const h = 600;
+        const w = 1500;
+        const h = 500;
 
         const req = new XMLHttpRequest();
 
@@ -64,9 +47,11 @@
         req.send();
         req.onload = function() {
           const json = JSON.parse(req.responseText);
-          const dataset = json.data;
+          const dataset = json.front;
 
           const padding = 50;
+
+          const alphabets = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",];
 
           const maxX = d3.max(dataset, (d, i) => parseInt(d[0].slice(0,4)));
           const minX = d3.min(dataset, (d, i) => parseInt(d[0].slice(0,4)));
@@ -82,7 +67,7 @@
             .domain([minY, maxY])
             .range([h - padding, padding]);
 
-          console.log(dataset, dataset.length, maxX, minX, maxY, minY);
+          console.log(dataset, dataset.length, alphabets.length);
 
           const svg = d3.select(`body`)
                           .append(`svg`)
