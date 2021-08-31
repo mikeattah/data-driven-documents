@@ -48,7 +48,7 @@
         /*border: 1px solid black;*/
         color: black;
       }
-      .circles {
+      .dot {
         stroke: black;
         stroke-width: 1px;
       }
@@ -66,85 +66,88 @@
 
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     <script>
-      document.addEventListener(`DOMContentLoaded`, function() {
+      document.addEventListener('DOMContentLoaded', function() {
 
-        const url = `https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json`;
+        d3.json('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json').then(function(data){
 
-        // elements will always have a 2:1 width to height ratio
-        // no matter what the zoom level is
-        const w = 900;
-        const h = 600;
+          // 'd' refers to each object in 'data'
 
-        const req = new XMLHttpRequest();
-
-        req.open(`GET`, url, true);
-        req.send();
-        req.onload = function() {
-          const json = req.responseText;
-          const dataset = JSON.parse(json);
+          // elements will always have a 3:2 width to height ratio
+          // no matter what the zoom level is
+          const w = 900;
+          const h = 600;
           const padding = 50;
-          const maxX = d3.max(dataset, (obj, i) => obj["Year"]);
-          const minX = d3.min(dataset, (obj, i) => obj["Year"]);
-          const maxY = d3.max(dataset, (obj, i) => obj["Time"].slice(0,2) + `.` + obj["Time"].slice(3));
-          const minY = d3.min(dataset, (obj, i) => obj["Time"].slice(0,2) + `.` + obj["Time"].slice(3));
+
+          var specifier = '%M:%S';
+          var minSec = d3.timeFormat('%M:%S');
+          var parsedData = data.map((d) => {
+            return d3.timeParse(specifier)(d['Time'])
+          });
+
+          const maxX = d3.max(data, (d, i) => d['Year']);
+          const minX = d3.min(data, (d, i) => d['Year']);
+
+          const maxY = d3.max(parsedData);
+          const minY = d3.min(parsedData);
 
           const xScale = d3.scaleLinear()
-            .domain([minX, maxX])
-            .range([padding, w - padding]);
+            .domain([1993, maxX])
+            .range([0, w]);
 
-          const yScale = d3.scaleLinear()
-            .domain([minY, maxY])
-            .range([h - padding, padding]);
+          const yScale = d3.scaleTime()
+            .domain(maxY, minY)
+            .range([h, 0]);
 
-          console.log(dataset, dataset.length, maxX, minX, maxY, minY);
+          console.log(data, data.length, maxX, minX, minSec(maxY), minSec(minY));
 
-          const svg = d3.select(`div`)
-            .append(`svg`)
-              .attr(`width`, w)
-              .attr(`height`, h)
-              .attr(`class`, `canvas`);
+          const svg = d3.select('div')
+            .append('svg')
+              .attr('width', w + 2 * padding)
+              .attr('height', h + 2 * padding)
+              .attr('class', 'canvas');
 
-          svg.selectAll(`circle`)
-            .data(dataset)
+          svg.selectAll('circle')
+            .data(data)
             .enter()
-            .append(`circle`)
-              .attr(`class`, `circles`)
-              .attr(`cx`, (obj, i) => xScale(obj["Year"]))
-              .attr(`cy`, (obj, i) => {
-                return h - yScale(obj["Time"].slice(0,2) + `.` + obj["Time"].slice(3))
-              })
-              .attr(`r`, 6)
-              .attr(`fill`, (obj, i) => {
-                if(obj["Doping"] !== "") {
-                  return `#0070f3`;
+            .append('circle')
+              .attr('class', 'dot')
+              .attr('cx', (d, i) => xScale(d['Year']))
+              .attr('cy', (d, i) => yScale(d['Time']))
+              .attr('r', 6)
+              .attr('fill', (d, i) => {
+                if(d['Doping'] !== "") {
+                  return '#0070f3';
                 } else {
-                  return `orange`;
+                  return 'orange';
                 }
               });
               
-          const x = svg.append(`g`);
-          const y = svg.append(`g`);
+          const x = svg.append('g');
+          const y = svg.append('g');
 
           const x_axis = d3.axisBottom()
                             .scale(xScale)
-                            .tickFormat(d3.format("d"));
+                            .tickFormat(d3.format('d'));
 
           const y_axis = d3.axisLeft()
-                            .scale(yScale);
+                            .scale(yScale)
+                            .tickValues(parsedData)
+                            .tickFormat((d) => {
+                              return minSec(d);
+                            });
             
-            x.attr(`transform`, (d, i) => {
-                return `translate(0,` + padding * 11 + `)`;
-              })
-              .attr(`id`, `x-axis`)
-              .call(x_axis);
+            x.attr('transform', (d, i) => {
+              return 'translate(' + padding + ', ' + h + ')';
+            })
+            .attr('id', 'x-axis')
+            .call(x_axis);
 
-            y.attr(`transform`, (d, i) => {
-                return `translate(` + padding + `,0)`;
-              })
-            .attr(`id`, `y-axis`)
-              .call(y_axis);
-            
-        }
+            y.attr('transform', (d, i) => {
+              return 'translate(' + padding + ', ' + '0' + ')';
+            })
+            .attr('id', 'y-axis')
+            .call(y_axis);
+        });
       });
     </script>
   </body>
