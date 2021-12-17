@@ -72,20 +72,18 @@
 
       document.addEventListener('DOMContentLoaded', function() {
 
-        d3.json('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json').then(function(data) {
-
-          const dataset = data.data;
+        d3.json('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json').then(({data}) => {
 
           const w = 1000;
           const h = 600;
           const paddingX = 50;
           const paddingY = 25;
 
-          const maxX = d3.max(dataset, (d, i) => parseFloat(d[0].slice(0,4)));
-          const minX = d3.min(dataset, (d, i) => parseFloat(d[0].slice(0,4)));
+          const maxX = d3.max(data, (d, i) => parseFloat(d[0].slice(0,4)));
+          const minX = d3.min(data, (d, i) => parseFloat(d[0].slice(0,4)));
 
-          const maxY = d3.max(dataset, (d, i) => d[1]);
-          const minY = d3.min(dataset, (d, i) => d[1]);
+          const maxY = d3.max(data, (d, i) => d[1]);
+          const minY = d3.min(data, (d, i) => d[1]);
 
           const xScale = d3.scaleLinear()
             .domain([minX, maxX])
@@ -95,7 +93,7 @@
             .domain([0, maxY])
             .range([h, 0]);
 
-          console.log(dataset, dataset.length, maxX, minX, maxY, minY);
+          console.log(data, data.length, maxX, minX, maxY, minY);
 
           const tooltip = d3.select('body').append('div').style({
             'position': 'absolute',
@@ -113,14 +111,14 @@
             if (d === '10') {return 'Q3';}
           }
 
-          const svg = d3.select('div')
+          const svg = d3.select('#container')
                           .append('svg')
                             .attr('width', w + 2 * paddingX)
                             .attr('height', h + 2 * paddingY)
                             .attr('class', 'canvas');
 
           const g = svg.selectAll('g')
-                          .data(dataset)
+                          .data(data)
                           .enter()
                           .append('g')
                           .attr('transform', () => {
@@ -128,9 +126,9 @@
                             });
 
           g.append('rect', (d, i) => d[1])
-            .attr('x', (d, i) => {return (i * (w / dataset.length))})
+            .attr('x', (d, i) => {return (i * (w / data.length))})
             .attr('y', (d, i) => yScale(d[1]))
-            .attr('width', (w / dataset.length))
+            .attr('width', (w / data.length))
             .attr('height', (d, i) => {return (h - yScale(d[1]))})
             .attr('class', 'bar')
 
