@@ -1,152 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Visualize Data with a Bar Chart" />
-    <!-- D3 Library: -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <meta
+      name="description"
+      content="freeCodeCamp Project - D3.js - Visualize Data with a Scatterplot Graph"
+    />
+
     <title>Visualize Data with a Scatterplot Graph</title>
-    <style>
-      body {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        width: 100vw;
-        background-color: #4682b4;
-      }
-      * {
-        margin: 0;
-        padding: 0;
-      }
-      #container {
-        height: 95vh;
-        width: 85vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: white;
-        box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
-        font-family: Roboto, Montserrat, sans-serif;
-      }
-      #title {
-        height:  5%;
-        width: 100%;
-        text-align: center;
-      }
-      #description {
-        text-align: center;
-        font-size: 1.2rem;
-        padding-bottom: 5px;
-      }
-      .canvas {
-        /*border: 1px solid black;*/
-        color: black;
-      }
-      .dot {
-        stroke: black;
-        stroke-width: 1px;
-      }
-      .text {
-        box-shadow: 0 0 5px 5px red;
-      }
-    </style>
+
+    <!-- jQuery Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- D3.js Library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Roboto:wght@400&family=Montserrat:wght@400&family=Prata:wght@400&family=Inter:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="fcc-project-styles.css" />
   </head>
   <body>
-    <!-- <noscript>You need to enable JavaScript to run this app.</noscript> -->
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="container">
-      <h2 id="title">Doping in Professional Bicycle Racing</h2>
-      <p id="description">35 Fastest times up Alpe d'Huez</p>
+      <h2 class="title">Doping in Professional Bicycle Racing</h2>
+      <p class="descriptions">35 Fastest times up Alpe d'Huez</p>
     </div>
 
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-
-        d3.json('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json').then(function(data){
-
+      document.addEventListener("DOMContentLoaded", function () {
+        d3.json(
+          "https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json"
+        ).then(function (data) {
           // 'd' refers to each object in 'data'
-
           // elements will always have a 3:2 width to height ratio
           // no matter what the zoom level is
-          const w = 900;
-          const h = 600;
-          const padding = 50;
+          const width = 600,
+            height = 600,
+            margin = 50,
+            padding = 0.1,
+            specifier = "%M:%S",
+            minSec = d3.timeFormat("%M:%S"),
+            parsedData = data.map((d) => d3.timeParse(specifier)(d["Time"])),
+            maxX = d3.max(data, (d, i) => d["Year"]),
+            minX = d3.min(data, (d, i) => d["Year"]),
+            maxY = d3.max(parsedData),
+            minY = d3.min(parsedData),
+            xScale = d3.scaleLinear().domain([1993, maxX]).range([0, width]),
+            yScale = d3.scaleTime().domain(maxY, minY).range([height, 0]);
 
-          var specifier = '%M:%S';
-          var minSec = d3.timeFormat('%M:%S');
-          var parsedData = data.map((d) => {
-            return d3.timeParse(specifier)(d['Time'])
-          });
+          // console.log(
+          //   data,
+          //   data.length,
+          //   maxX,
+          //   minX,
+          //   minSec(maxY),
+          //   minSec(minY)
+          // );
 
-          const maxX = d3.max(data, (d, i) => d['Year']);
-          const minX = d3.min(data, (d, i) => d['Year']);
+          const svg = d3
+            .select("#container")
+            .append("svg")
+            .attr("viewBox", [0, 0, width + 2 * margin, height + 2 * margin])
+            .attr("class", "canvas");
 
-          const maxY = d3.max(parsedData);
-          const minY = d3.min(parsedData);
-
-          const xScale = d3.scaleLinear()
-            .domain([1993, maxX])
-            .range([0, w]);
-
-          const yScale = d3.scaleTime()
-            .domain(maxY, minY)
-            .range([h, 0]);
-
-          console.log(data, data.length, maxX, minX, minSec(maxY), minSec(minY));
-
-          const svg = d3.select('div')
-            .append('svg')
-              .attr('width', w + 2 * padding)
-              .attr('height', h + 2 * padding)
-              .attr('class', 'canvas');
-
-          svg.selectAll('circle')
+          svg
+            .selectAll("circle")
             .data(data)
             .enter()
-            .append('circle')
-              .attr('class', 'dot')
-              .attr('cx', (d, i) => xScale(d['Year']))
-              .attr('cy', (d, i) => yScale(d['Time']))
-              .attr('r', 6)
-              .attr('fill', (d, i) => {
-                if(d['Doping'] !== "") {
-                  return '#0070f3';
-                } else {
-                  return 'orange';
-                }
-              });
-              
-          const x = svg.append('g');
-          const y = svg.append('g');
+            .append("circle")
+            .attr("class", "dot")
+            .attr("cx", (d, i) => xScale(d["Year"]))
+            .attr("cy", (d, i) => yScale(d["Time"]))
+            .attr("r", 6)
+            .attr("fill", (d, i) => {
+              if (d["Doping"] !== "") return "#0070f3";
+              else return "orange";
+            });
 
-          const x_axis = d3.axisBottom()
-                            .scale(xScale)
-                            .tickFormat(d3.format('d'));
+          const x = svg.append("g"),
+            y = svg.append("g"),
+            xAxis = d3.axisBottom().scale(xScale).tickFormat(d3.format("d")),
+            yAxis = d3
+              .axisLeft()
+              .scale(yScale)
+              .tickValues(parsedData)
+              .tickFormat((d) => minSec(d));
 
-          const y_axis = d3.axisLeft()
-                            .scale(yScale)
-                            .tickValues(parsedData)
-                            .tickFormat((d) => {
-                              return minSec(d);
-                            });
-            
-            x.attr('transform', (d, i) => {
-              return 'translate(' + padding + ', ' + h + ')';
-            })
-            .attr('id', 'x-axis')
-            .call(x_axis);
+          x.attr(
+            "transform",
+            (d, i) => "translate(" + margin + ", " + height + ")"
+          )
+            .attr("id", "x-axis")
+            .call(xAxis);
 
-            y.attr('transform', (d, i) => {
-              return 'translate(' + padding + ', ' + '0' + ')';
-            })
-            .attr('id', 'y-axis')
-            .call(y_axis);
+          y.attr(
+            "transform",
+            (d, i) => "translate(" + margin + ", " + "0" + ")"
+          )
+            .attr("id", "y-axis")
+            .call(yAxis);
         });
       });
     </script>

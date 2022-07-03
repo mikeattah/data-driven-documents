@@ -1,178 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Visualize Data with a Bar Chart" />
+    <meta
+      name="description"
+      content="freeCodeCamp Project - D3.js - Visualize Data with a Bar Chart"
+    />
+
+    <title>Visualize Data with a Bar Chart</title>
+
     <!-- jQuery Library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <!-- D3.js Library -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <title>Visualize Data with a Bar Chart</title>
-    <style>
-      body {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        width: 100vw;
-        background-color: #483d8b;
-      }
-      * {
-        margin: 0;
-        padding: 0;
-      }
-      #container {
-        height: 95vh;
-        width: 85vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: white;
-        box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
-      }
-      #title {
-        height:  5%;
-        width: 100%;
-        text-align: center;
-        font-family: Roboto, Montserrat, sans-serif;
-      }
-      .canvas {
-        /*border: 1px solid black;*/
-        color: black;
-      }
-      .bar {
-        fill: #0070f3;
-      }
-      .bar:hover {
-        fill: whitesmoke;
-      }
-      .text {
-        box-shadow: 0 0 5px 5px red;
-      }
-    </style>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Roboto:wght@400&family=Montserrat:wght@400&family=Prata:wght@400&family=Inter:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="fcc-project-styles.css" />
   </head>
   <body>
-    <!-- <noscript>You need to enable JavaScript to run this app.</noscript> -->
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="container">
-      <h1 id="title">United States GDP</h1>
+      <h1 class="title">United States GDP</h1>
     </div>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     <script>
-      // function Quarters(d) {
-      //       if (d[0].slice(5,7) === '01') {return 'Q4'}
-      //       if (d[0].slice(5,7) === '04') {return 'Q1'}
-      //       if (d[0].slice(5,7) === '07') {return 'Q2'}
-      //       if (d[0].slice(5,7) === '10') {return 'Q3'}
-      //     }
+      function qtrs(d) {
+        let t = d.slice(5, 7);
+        switch (t) {
+          case "01":
+            return "Q1";
+          case "04":
+            return "Q2";
+          case "07":
+            return "Q3";
+          case "10":
+            return "Q4";
+          default:
+            return "";
+        }
+      }
 
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener("DOMContentLoaded", function () {
+        d3.json(
+          "https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json"
+        ).then(({ data }) => {
+          const width = 600,
+            height = 600,
+            margin = 50,
+            padding = 0.1,
+            maxX = d3.max(data, (d, i) => parseFloat(d[0].slice(0, 4))),
+            minX = d3.min(data, (d, i) => parseFloat(d[0].slice(0, 4))),
+            maxY = d3.max(data, (d, i) => d[1]),
+            minY = d3.min(data, (d, i) => d[1]),
+            xScale = d3
+              .scaleLinear()
+              .domain([minX, maxX])
+              .range([margin, width - margin])
+              .padding(padding),
+            yScale = d3
+              .scaleLinear()
+              .domain([0, maxY])
+              .range([height - margin, margin]);
 
-        d3.json('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json').then(({data}) => {
+          // console.log(data, data.length, maxX, minX, maxY, minY);
 
-          const w = 1000;
-          const h = 600;
-          const paddingX = 50;
-          const paddingY = 25;
-
-          const maxX = d3.max(data, (d, i) => parseFloat(d[0].slice(0,4)));
-          const minX = d3.min(data, (d, i) => parseFloat(d[0].slice(0,4)));
-
-          const maxY = d3.max(data, (d, i) => d[1]);
-          const minY = d3.min(data, (d, i) => d[1]);
-
-          const xScale = d3.scaleLinear()
-            .domain([minX, maxX])
-            .range([0, w]);
-
-          const yScale = d3.scaleLinear()
-            .domain([0, maxY])
-            .range([h, 0]);
-
-          console.log(data, data.length, maxX, minX, maxY, minY);
-
-          const tooltip = d3.select('body').append('div').style({
-            'position': 'absolute',
-            'padding': '4px',
-            'background': '#fff',
-            'border': '1px solid #000',
-            'color': '#000',
-            'opacity': 0.8
+          const tooltip = d3.select("body").append("div").style({
+            position: "absolute",
+            padding: "4px",
+            background: "#fff",
+            border: "1px solid #000",
+            color: "#000",
+            opacity: 0.8,
           });
 
-          function Quarters(d) {
-            if (d === '01') {return 'Q4';}
-            if (d === '04') {return 'Q1';}
-            if (d === '07') {return 'Q2';}
-            if (d === '10') {return 'Q3';}
-          }
+          const svg = d3
+            .select("#container")
+            .append("svg")
+            .attr("viewBox", [0, 0, width + 2 * margin, height + 2 * margin])
+            .attr("class", "canvas");
 
-          const svg = d3.select('#container')
-                          .append('svg')
-                            .attr('width', w + 2 * paddingX)
-                            .attr('height', h + 2 * paddingY)
-                            .attr('class', 'canvas');
-
-          const g = svg.selectAll('g')
-                          .data(data)
-                          .enter()
-                          .append('g')
-                          .attr('transform', () => {
-                              return 'translate(50,0)';
-                            });
-
-          g.append('rect', (d, i) => d[1])
-            .attr('x', (d, i) => {return (i * (w / data.length))})
-            .attr('y', (d, i) => yScale(d[1]))
-            .attr('width', (w / data.length))
-            .attr('height', (d, i) => {return (h - yScale(d[1]))})
-            .attr('class', 'bar')
-
-            .on('mouseover', (d, i) => {
-              tooltip.append('div').attr('left', '10px').attr('top', '15px')
-              .html(
-                '<p>' + Quarters(d[0].slice(5,7)) + '</p>' +
-                '<p>' + d[0].slice(0,4) + '</p>' +
-                '<p> $' + d[1] + ' Billion' + '</p>'
-              );
-
-              d3.select(this).style('opacity', 0.1);
+          const g = svg
+            .selectAll("g")
+            .data(data)
+            .enter()
+            .append("g")
+            .attr("transform", () => {
+              return "translate(50,0)";
             });
 
-            // g.append('title')
-            //   .text((d) => {
-            //     return (
-            //       d[0].slice(0, 4) + ' ' +
-            //       '$' + d[1] + ' Billion'
-            //       )
-            //   })
-            //   .attr('class', 'text');
-
-          const x = svg.append('g');
-          const y = svg.append('g');
-
-          const x_axis = d3.axisBottom()
-                            .scale(xScale)
-                            .tickFormat(d3.format('d'));
-
-          const y_axis = d3.axisLeft()
-                            .scale(yScale);
-            
-          x.attr('transform', (d, i) => {
-              return 'translate(50,' + h + ')';
+          g.append("rect", (d, i) => d[1])
+            .attr("x", (d, i) => {
+              return i * (width / data.length);
             })
-            .attr('id', 'x-axis')
-            .call(x_axis);
-
-          y.attr('transform', (d, i) => {
-              return 'translate(50,0)';
+            .attr("y", (d, i) => yScale(d[1]))
+            .attr("width", width / data.length)
+            .attr("height", (d, i) => {
+              return height - yScale(d[1]);
             })
-            .attr('id', 'y-axis')
-            .call(y_axis);
+            .attr("class", "bar")
+            .on("mouseover", (d, i) => {
+              tooltip
+                .append("div")
+                .attr("left", "10px")
+                .attr("top", "15px")
+                .html(
+                  "<p>" +
+                    qtrs(d[0].slice(5, 7)) +
+                    "</p>" +
+                    "<p>" +
+                    d[0].slice(0, 4) +
+                    "</p>" +
+                    "<p> $" +
+                    d[1] +
+                    " Billion" +
+                    "</p>"
+                );
+
+              d3.select(this).style("opacity", 0.1);
+            });
+
+          // g.append('title')
+          //   .text((d) => {
+          //     return (
+          //       d[0].slice(0, 4) + ' ' +
+          //       '$' + d[1] + ' Billion'
+          //       )
+          //   })
+          //   .attr('class', 'text');
+
+          const x = svg.append("g"),
+            y = svg.append("g"),
+            xAxis = d3.axisBottom().scale(xScale).tickFormat(d3.format("d")),
+            yAxis = d3.axisLeft().scale(yScale);
+
+          x.attr("transform", (d, i) => {
+            return "translate(50," + height + ")";
+          })
+            .attr("id", "x-axis")
+            .call(xAxis);
+
+          y.attr("transform", (d, i) => {
+            return "translate(50,0)";
+          })
+            .attr("id", "y-axis")
+            .call(yAxis);
         });
       });
     </script>
