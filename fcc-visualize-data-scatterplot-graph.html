@@ -25,12 +25,12 @@
     />
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="fcc-project-styles.css" />
+    <link rel="stylesheet" href="fcc-visualize-data-styles.css" />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="container">
-      <h2 class="title">Doping in Professional Bicycle Racing</h2>
+      <h2 id="title">Doping in Professional Bicycle Racing</h2>
       <p class="descriptions">35 Fastest times up Alpe d'Huez</p>
     </div>
 
@@ -43,7 +43,7 @@
           // 'd' refers to each object in 'data'
           // elements will always have a 3:2 width to height ratio
           // no matter what the zoom level is
-          const width = 600,
+          const width = 900,
             height = 600,
             margin = 50,
             padding = 0.1,
@@ -75,8 +75,7 @@
           svg
             .selectAll("circle")
             .data(data)
-            .enter()
-            .append("circle")
+            .join("circle")
             .attr("class", "dot")
             .attr("cx", (d, i) => xScale(d["Year"]))
             .attr("cy", (d, i) => yScale(d["Time"]))
@@ -86,26 +85,31 @@
               else return "orange";
             });
 
-          const x = svg.append("g"),
-            y = svg.append("g"),
-            xAxis = d3.axisBottom().scale(xScale).tickFormat(d3.format("d")),
+          const xAxis = d3
+              .axisBottom()
+              .scale(xScale)
+              .tickFormat(d3.format("d")),
             yAxis = d3
               .axisLeft()
               .scale(yScale)
               .tickValues(parsedData)
               .tickFormat((d) => minSec(d));
 
-          x.attr(
-            "transform",
-            (d, i) => "translate(" + margin + ", " + height + ")"
-          )
+          svg
+            .append("g")
+            .attr(
+              "transform",
+              (d, i) => "translate(" + margin + ", " + height + ")"
+            )
             .attr("id", "x-axis")
             .call(xAxis);
 
-          y.attr(
-            "transform",
-            (d, i) => "translate(" + margin + ", " + "0" + ")"
-          )
+          svg
+            .append("g")
+            .attr(
+              "transform",
+              (d, i) => "translate(" + margin + ", " + "0" + ")"
+            )
             .attr("id", "y-axis")
             .call(yAxis);
         });

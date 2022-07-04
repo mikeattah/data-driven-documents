@@ -25,12 +25,12 @@
     />
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="fcc-project-styles.css" />
+    <link rel="stylesheet" href="fcc-visualize-data-styles.css" />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="container">
-      <h1 class="title">United States GDP</h1>
+      <h1 id="title">United States GDP</h1>
     </div>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
     <script>
@@ -53,8 +53,8 @@
       document.addEventListener("DOMContentLoaded", function () {
         d3.json(
           "https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json"
-        ).then(({ data }) => {
-          const width = 600,
+        ).then((data) => {
+          const width = 900,
             height = 600,
             margin = 50,
             padding = 0.1,
@@ -74,39 +74,28 @@
 
           // console.log(data, data.length, maxX, minX, maxY, minY);
 
-          const tooltip = d3.select("body").append("div").style({
-            position: "absolute",
-            padding: "4px",
-            background: "#fff",
-            border: "1px solid #000",
-            color: "#000",
-            opacity: 0.8,
-          });
+          const tooltip = d3.select("body").append("div").attr("id", "tooltip");
 
+          // create svg container
           const svg = d3
             .select("#container")
             .append("svg")
             .attr("viewBox", [0, 0, width + 2 * margin, height + 2 * margin])
             .attr("class", "canvas");
 
-          const g = svg
+          // create bars
+          const bars = svg
             .selectAll("g")
             .data(data)
-            .enter()
-            .append("g")
-            .attr("transform", () => {
-              return "translate(50,0)";
-            });
+            .join("g")
+            .attr("transform", () => "translate(50,0)");
 
-          g.append("rect", (d, i) => d[1])
-            .attr("x", (d, i) => {
-              return i * (width / data.length);
-            })
+          bars
+            .append("rect", (d, i) => d[1])
+            .attr("x", (d, i) => i * (width / data.length))
             .attr("y", (d, i) => yScale(d[1]))
             .attr("width", width / data.length)
-            .attr("height", (d, i) => {
-              return height - yScale(d[1]);
-            })
+            .attr("height", (d, i) => height - yScale(d[1]))
             .attr("class", "bar")
             .on("mouseover", (d, i) => {
               tooltip
@@ -129,7 +118,7 @@
               d3.select(this).style("opacity", 0.1);
             });
 
-          // g.append('title')
+          // bars.append('title')
           //   .text((d) => {
           //     return (
           //       d[0].slice(0, 4) + ' ' +
@@ -138,20 +127,22 @@
           //   })
           //   .attr('class', 'text');
 
-          const x = svg.append("g"),
-            y = svg.append("g"),
-            xAxis = d3.axisBottom().scale(xScale).tickFormat(d3.format("d")),
+          // create horizontal and vertical axes
+          const xAxis = d3
+              .axisBottom()
+              .scale(xScale)
+              .tickFormat(d3.format("d")),
             yAxis = d3.axisLeft().scale(yScale);
 
-          x.attr("transform", (d, i) => {
-            return "translate(50," + height + ")";
-          })
+          svg
+            .append("g")
+            .attr("transform", (d, i) => "translate(50," + height + ")")
             .attr("id", "x-axis")
             .call(xAxis);
 
-          y.attr("transform", (d, i) => {
-            return "translate(50,0)";
-          })
+          svg
+            .append("g")
+            .attr("transform", (d, i) => "translate(50,0)")
             .attr("id", "y-axis")
             .call(yAxis);
         });

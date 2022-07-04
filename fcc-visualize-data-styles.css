@@ -56,7 +56,7 @@ span {
   align-items: center;
 }
 
-.title {
+#title {
   width: 100%;
   text-align: center;
   font-family: Roboto, Montserrat, sans-serif;
@@ -82,12 +82,30 @@ span {
   color: black;
 }
 
+.x-axis {
+}
+
+.y-axis {
+}
+
+.tick {
+}
+
 .bar {
   fill: #0070f3;
 }
 
 .bar:hover {
   fill: whitesmoke;
+}
+
+#tooltip {
+  position: "absolute";
+  padding: "4px";
+  background: "#fff";
+  border: "1px solid #000";
+  color: "#000";
+  opacity: 0.8;
 }
 
 .text {

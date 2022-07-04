@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="freeCodeCamp Project - Visualize Data with a Treemap Diagram"
+      content="freeCodeCamp Project - D3.js - Visualize Data with a Treemap Diagram"
     />
 
     <title>Visualize Data with a Treemap Diagram</title>
@@ -25,7 +25,7 @@
     />
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="fcc-project-styles.css" />
+    <link rel="stylesheet" href="fcc-visualize-data-styles.css" />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -39,7 +39,7 @@
           <a href="#">Kickstarter Data Set</a>
         </nav>
         <div id="chart">
-          <h1 class="title">Video Game Sales</h1>
+          <h1 id="title">Video Game Sales</h1>
           <p class="descriptions">
             Top 100 Most Sold Video Games Grouped by Platform
           </p>
@@ -63,16 +63,16 @@
         req.onload = function () {
           // elements will always have a 2:1 width to height ratio
           // no matter what the zoom level is
-          const width = 600,
+          const width = 900,
             height = 600,
             margin = 50,
             padding = 0.1,
             json = JSON.parse(req.responseText),
-            dataset = json.data,
-            maxX = d3.max(dataset, (d, i) => parseInt(d[0].slice(0, 4))),
-            minX = d3.min(dataset, (d, i) => parseInt(d[0].slice(0, 4))),
-            maxY = d3.max(dataset, (d, i) => d[1]),
-            minY = d3.min(dataset, (d, i) => d[1]),
+            data = json.data,
+            maxX = d3.max(data, (d, i) => parseInt(d[0].slice(0, 4))),
+            minX = d3.min(data, (d, i) => parseInt(d[0].slice(0, 4))),
+            maxY = d3.max(data, (d, i) => d[1]),
+            minY = d3.min(data, (d, i) => d[1]),
             xScale = d3
               .scaleLinear()
               .domain([minX, maxX])
@@ -82,7 +82,7 @@
               .domain([minY, maxY])
               .range([height - margin, margin]);
 
-          // console.log(dataset, dataset.length, maxX, minX, maxY, minY);
+          // console.log(data, data.length, maxX, minX, maxY, minY);
 
           const svg = d3
             .select("#container")
@@ -91,7 +91,7 @@
             .attr("height", height)
             .attr("class", "canvas");
 
-          const g = svg.selectAll("g").data(dataset).enter().append("g");
+          const g = svg.selectAll("g").data(data).join("g");
 
           g.append("rect", (d, i) => d[1])
             .attr("x", (d, i) => i + xScale(parseFloat(d[0].slice(0, 4))))
@@ -105,16 +105,21 @@
             .text((d) => d[0].slice(0, 4) + " " + "$" + d[1] + " Billion")
             .attr("class", "text");
 
-          const x = svg.append("g"),
-            y = svg.append("g"),
-            xAxis = d3.axisBottom().scale(xScale).tickFormat(d3.format("d")),
+          const xAxis = d3
+              .axisBottom()
+              .scale(xScale)
+              .tickFormat(d3.format("d")),
             yAxis = d3.axisLeft().scale(yScale);
 
-          x.attr("transform", (d, i) => "translate(0," + margin * 11 + ")")
+          svg
+            .append("g")
+            .attr("transform", (d, i) => "translate(0," + margin * 11 + ")")
             .attr("id", "x-axis")
             .call(xAxis);
 
-          y.attr("transform", (d, i) => "translate(" + margin + ",0)")
+          svg
+            .append("g")
+            .attr("transform", (d, i) => "translate(" + margin + ",0)")
             .attr("id", "y-axis")
             .call(yAxis);
         };

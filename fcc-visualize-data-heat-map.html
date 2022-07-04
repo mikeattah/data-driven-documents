@@ -25,12 +25,12 @@
     />
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="fcc-project-styles.css" />
+    <link rel="stylesheet" href="fcc-visualize-data-styles.css" />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="container">
-      <h2 class="title">Monthly Global Land-Surface Temperature</h2>
+      <h2 id="title">Monthly Global Land-Surface Temperature</h2>
       <p class="descriptions">1753 - 2015: base temperature 8.66℃</p>
     </div>
 
@@ -46,20 +46,20 @@
         req.onload = function () {
           // elements will always have a 2:1 width to height ratio
           // no matter what the zoom level is
-          const width = 600,
+          const width = 900,
             height = 600,
             margin = 50,
             padding = 0.1,
             json = req.responseText,
-            dataset = JSON.parse(json),
-            maxX = d3.max(dataset, (obj, i) => obj["Year"]),
-            minX = d3.min(dataset, (obj, i) => obj["Year"]),
+            data = JSON.parse(json),
+            maxX = d3.max(data, (obj, i) => obj["Year"]),
+            minX = d3.min(data, (obj, i) => obj["Year"]),
             maxY = d3.max(
-              dataset,
+              data,
               (obj, i) => obj["Time"].slice(0, 2) + "." + obj["Time"].slice(3)
             ),
             minY = d3.min(
-              dataset,
+              data,
               (obj, i) => obj["Time"].slice(0, 2) + "." + obj["Time"].slice(3)
             ),
             xScale = d3
@@ -71,7 +71,7 @@
               .domain([minY, maxY])
               .range([height - margin, margin]);
 
-          // console.log(dataset, dataset.length, maxX, minX, maxY, minY);
+          // console.log(data, data.length, maxX, minX, maxY, minY);
 
           const svg = d3
             .select("#container")
@@ -81,9 +81,8 @@
 
           svg
             .selectAll("circle")
-            .data(dataset)
-            .enter()
-            .append("circle")
+            .data(data)
+            .join("circle")
             .attr("class", "circles")
             .attr("cx", (obj, i) => xScale(obj["Year"]))
             .attr(
@@ -101,7 +100,9 @@
           //   .attr("class", "text")
           // .text();
 
-          svg.append("g").attr("id", "x-axis").append("g").attr("id", "y-axis");
+          svg.append("g").attr("id", "x-axis");
+
+          svg.append("g").attr("id", "y-axis");
         };
       });
     </script>
