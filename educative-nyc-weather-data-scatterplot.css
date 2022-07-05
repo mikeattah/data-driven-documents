@@ -15,15 +15,6 @@ body {
   background-color: #483d8b;
 }
 
-a {
-  text-decoration: none;
-}
-
-span {
-  color: black;
-  font-weight: bolder;
-}
-
 #chart {
   width: 800px;
   height: 800px;
@@ -43,4 +34,9 @@ span {
 
 #tooltip .metric-date {
   text-decoration: underline;
+}
+
+.axis {
+  font-size: 18px;
+  shape-rendering: geometricPrecision;
 }
