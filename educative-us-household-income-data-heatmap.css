@@ -1,0 +1,18 @@
+.title {
+  text-align: center;
+}
+
+.sub-title {
+  text-align: center;
+}
+
+.sub-title:not(:first-child) {
+  margin-top: 50px;
+}
+
+.chart {
+  width: 600px;
+  height: 150px;
+  background-color: #f7f7f7;
+  margin: 25px auto;
+}
