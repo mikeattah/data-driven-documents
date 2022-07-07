@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Educative Project - D3.js - Visualize US Household Income Data with a Heatmap"
+      content="Educative Project - D3.js - Visualize New York City Weather Data with a Histogram"
     />
 
-    <title>Visualize US Household Income Data with a Heatmap</title>
+    <title>Visualize New York City Weather Data with a Histogram</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,29 +19,15 @@
     />
 
     <!-- Custom Styles -->
-    <link
-      rel="stylesheet"
-      href="educative-us-household-income-data-heatmap.css"
-    />
+    <link rel="stylesheet" href="educative-nyc-weather-data-histogram.css" />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <h1 class="title">D3 Heatmap</h1>
-
-    <h2 class="sub-title">Linear Scale</h2>
-    <div class="chart" id="heatmap1"></div>
-
-    <h2 class="sub-title">Quantize Scale</h2>
-    <div class="chart" id="heatmap2"></div>
-
-    <h2 class="sub-title">Quantile Scale</h2>
-    <div class="chart" id="heatmap3"></div>
-
-    <h2 class="sub-title">Threshold Scale</h2>
-    <div class="chart" id="heatmap4"></div>
+    <h1 class="title">D3 Histogram</h1>
+    <div id="chart"></div>
     <!-- D3.js Library -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <!-- Custom Script -->
-    <script src="educative-us-household-income-data-heatmap.js"></script>
+    <script src="educative-nyc-weather-data-histogram.js"></script>
   </body>
 </html>

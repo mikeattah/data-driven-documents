@@ -12,7 +12,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: #f7f7f7;
 }
 
 a {
@@ -26,8 +26,24 @@ a {
 }
 
 #chart {
-  width: 200px;
-  height: 500px;
-  background-color: #f7f7f7;
   margin: 25px auto;
+  width: 800px;
+}
+
+.bar-labels {
+  text-anchor: middle;
+  font-size: 16px;
+  /* font-family: sans-serif; */
+}
+
+select {
+  margin: 25px auto 0;
+  display: block;
+  font-size: 20px;
+}
+
+.mean-line {
+  stroke: #d62828;
+  stroke-dasharray: 6;
+  stroke-width: 2px;
 }
