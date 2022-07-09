@@ -31,6 +31,18 @@ async function draw() {
       `translate(${dimensions.margins}, ${dimensions.margins})`
     );
 
+  // Tooltip Selection
+  const tooltip = d3.select("#tooltip");
+
+  const tooltipDot = ctr
+    .append("circle")
+    .attr("r", 5)
+    .attr("fill", "#fc8781")
+    .attr("stroke", "black")
+    .attr("stroke-width", 2)
+    .style("opacity", 0)
+    .style("pointer-events", "none");
+
   // Scales
   const xScale = d3
     .scaleUtc()
@@ -68,6 +80,30 @@ async function draw() {
     .append("g")
     .call(xAxis)
     .style("transform", `tranlateY(${dimensions.ctrHeight}px)`);
+
+  // Draw Container Overlay
+  ctr
+    .append("rect")
+    .style("opacity", 0)
+    .attr("width", dimensions.ctrWidth)
+    .attr("height", dimensions.ctrHeight)
+    .on("touchmouse mousemove", function (e) {
+      const mousePos = d3.pointer(e, this);
+      const date = xScale.invert(mousePos[0]);
+
+      // Custom Bisector - left, center, right
+      const weatherBisect = d3.bisector(xAccessor).left;
+      const index = weatherBisect(data, date);
+      const weather = data[index - 1];
+
+      // Update Image
+      tooltipDot
+        .style("opacity", 1)
+        .attr("cx", xScale(xAccessor(weather)))
+        .attr("cy", yScale(yAccessor(weather)))
+        .raise();
+    })
+    .on("mouseleave", function (e) {});
 }
 
 draw();

@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Educative Project - D3.js - Visualize Apple Stock Price Data with Line Chart"
+      content="Educative Project - D3.js - Visualize US Household Income Data with a Heatmap"
     />
 
-    <title>Visualize Apple Stock Price Data with Line Chart</title>
+    <title>Visualize US Household Income Data with a Heatmap</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,22 +19,26 @@
     />
 
     <!-- Custom Styles -->
-    <link
-      rel="stylesheet"
-      href="educative-apple-stock-price-data-line-chart.css"
-    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <h1 class="title">D3 Heatmap</h1>
 
-    <h1 class="title">D3 Line Chart</h1>
+    <h2 class="sub-title">Linear Scale</h2>
+    <div class="chart" id="heatmap1"></div>
 
-    <div id="chart"></div>
+    <h2 class="sub-title">Quantize Scale</h2>
+    <div class="chart" id="heatmap2"></div>
 
+    <h2 class="sub-title">Quantile Scale</h2>
+    <div class="chart" id="heatmap3"></div>
+
+    <h2 class="sub-title">Threshold Scale</h2>
+    <div class="chart" id="heatmap4"></div>
     <!-- D3.js Library -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
-
     <!-- Custom Script -->
-    <script src="educative-apple-stock-price-data-line-chart.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>
