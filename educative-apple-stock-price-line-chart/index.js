@@ -102,8 +102,22 @@ async function draw() {
         .attr("cx", xScale(xAccessor(weather)))
         .attr("cy", yScale(yAccessor(weather)))
         .raise();
+
+      tooltip
+        .style("display", "block")
+        .style("top", `${yScale(yAccessor(weather)) - 20}px`)
+        .style("left", `${xScale(xAccessor(weather))}px`);
+
+      tooltip.select(".price").text(`$${yAccessor(weather)}`);
+
+      const dateFormatter = d3.timeFormat("%B %-d, %Y");
+
+      tooltip.select(".date").text(dateFormatter(xAccessor(weather)));
     })
-    .on("mouseleave", function (e) {});
+    .on("mouseleave", function (e) {
+      tooltipDot.style("opacity", 0);
+      tooltip.style("display", "none");
+    });
 }
 
 draw();
