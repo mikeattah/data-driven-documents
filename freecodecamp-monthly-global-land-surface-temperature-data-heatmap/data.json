@@ -44,12 +44,12 @@
     {
       "year": 1753,
       "month": 9,
-      "variance": 0.470
+      "variance": 0.47
     },
     {
       "year": 1753,
       "month": 10,
-      "variance": -0.610
+      "variance": -0.61
     },
     {
       "year": 1753,
@@ -154,7 +154,7 @@
     {
       "year": 1755,
       "month": 7,
-      "variance": -0.270
+      "variance": -0.27
     },
     {
       "year": 1755,
@@ -169,7 +169,7 @@
     {
       "year": 1755,
       "month": 10,
-      "variance": 0.610
+      "variance": 0.61
     },
     {
       "year": 1755,
@@ -199,7 +199,7 @@
     {
       "year": 1756,
       "month": 4,
-      "variance": 0.940
+      "variance": 0.94
     },
     {
       "year": 1756,
@@ -309,7 +309,7 @@
     {
       "year": 1758,
       "month": 2,
-      "variance": -2.020
+      "variance": -2.02
     },
     {
       "year": 1758,
@@ -389,12 +389,12 @@
     {
       "year": 1759,
       "month": 6,
-      "variance": -0.250
+      "variance": -0.25
     },
     {
       "year": 1759,
       "month": 7,
-      "variance": -2.330
+      "variance": -2.33
     },
     {
       "year": 1759,
@@ -419,7 +419,7 @@
     {
       "year": 1759,
       "month": 12,
-      "variance": -4.660
+      "variance": -4.66
     },
     {
       "year": 1760,
@@ -429,7 +429,7 @@
     {
       "year": 1760,
       "month": 2,
-      "variance": -0.400
+      "variance": -0.4
     },
     {
       "year": 1760,
@@ -459,7 +459,7 @@
     {
       "year": 1760,
       "month": 8,
-      "variance": -0.970
+      "variance": -0.97
     },
     {
       "year": 1760,
@@ -554,7 +554,7 @@
     {
       "year": 1762,
       "month": 3,
-      "variance": -1.680
+      "variance": -1.68
     },
     {
       "year": 1762,
@@ -689,7 +689,7 @@
     {
       "year": 1764,
       "month": 6,
-      "variance": -1.810
+      "variance": -1.81
     },
     {
       "year": 1764,
@@ -704,7 +704,7 @@
     {
       "year": 1764,
       "month": 9,
-      "variance": -1.100
+      "variance": -1.1
     },
     {
       "year": 1764,
@@ -729,7 +729,7 @@
     {
       "year": 1765,
       "month": 2,
-      "variance": -0.100
+      "variance": -0.1
     },
     {
       "year": 1765,
@@ -749,7 +749,7 @@
     {
       "year": 1765,
       "month": 6,
-      "variance": -2.720
+      "variance": -2.72
     },
     {
       "year": 1765,
@@ -799,7 +799,7 @@
     {
       "year": 1766,
       "month": 4,
-      "variance": -0.430
+      "variance": -0.43
     },
     {
       "year": 1766,
@@ -874,7 +874,7 @@
     {
       "year": 1767,
       "month": 7,
-      "variance": -0.840
+      "variance": -0.84
     },
     {
       "year": 1767,
@@ -889,12 +889,12 @@
     {
       "year": 1767,
       "month": 10,
-      "variance": -0.090
+      "variance": -0.09
     },
     {
       "year": 1767,
       "month": 11,
-      "variance": 1.920
+      "variance": 1.92
     },
     {
       "year": 1767,
@@ -1024,7 +1024,7 @@
     {
       "year": 1770,
       "month": 1,
-      "variance": -0.730
+      "variance": -0.73
     },
     {
       "year": 1770,
@@ -1094,7 +1094,7 @@
     {
       "year": 1771,
       "month": 3,
-      "variance": -2.900
+      "variance": -2.9
     },
     {
       "year": 1771,
@@ -1114,7 +1114,7 @@
     {
       "year": 1771,
       "month": 7,
-      "variance": -0.280
+      "variance": -0.28
     },
     {
       "year": 1771,
@@ -1209,7 +1209,7 @@
     {
       "year": 1773,
       "month": 2,
-      "variance": -2.370
+      "variance": -2.37
     },
     {
       "year": 1773,
@@ -1229,7 +1229,7 @@
     {
       "year": 1773,
       "month": 6,
-      "variance": -0.760
+      "variance": -0.76
     },
     {
       "year": 1773,
@@ -1239,7 +1239,7 @@
     {
       "year": 1773,
       "month": 8,
-      "variance": -0.140
+      "variance": -0.14
     },
     {
       "year": 1773,
@@ -1344,7 +1344,7 @@
     {
       "year": 1775,
       "month": 5,
-      "variance": -0.110
+      "variance": -0.11
     },
     {
       "year": 1775,
@@ -1394,7 +1394,7 @@
     {
       "year": 1776,
       "month": 3,
-      "variance": -1.390
+      "variance": -1.39
     },
     {
       "year": 1776,
@@ -1419,7 +1419,7 @@
     {
       "year": 1776,
       "month": 8,
-      "variance": 1.080
+      "variance": 1.08
     },
     {
       "year": 1776,
@@ -1454,7 +1454,7 @@
     {
       "year": 1777,
       "month": 3,
-      "variance": -0.800
+      "variance": -0.8
     },
     {
       "year": 1777,
@@ -1474,12 +1474,12 @@
     {
       "year": 1777,
       "month": 7,
-      "variance": -2.050
+      "variance": -2.05
     },
     {
       "year": 1777,
       "month": 8,
-      "variance": -1.330
+      "variance": -1.33
     },
     {
       "year": 1777,
@@ -1514,7 +1514,7 @@
     {
       "year": 1778,
       "month": 3,
-      "variance": -1.760
+      "variance": -1.76
     },
     {
       "year": 1778,
@@ -1549,7 +1549,7 @@
     {
       "year": 1778,
       "month": 10,
-      "variance": -1.790
+      "variance": -1.79
     },
     {
       "year": 1778,
@@ -1614,7 +1614,7 @@
     {
       "year": 1779,
       "month": 11,
-      "variance": -0.380
+      "variance": -0.38
     },
     {
       "year": 1779,
@@ -1959,7 +1959,7 @@
     {
       "year": 1785,
       "month": 8,
-      "variance": 0.630
+      "variance": 0.63
     },
     {
       "year": 1785,
@@ -2004,7 +2004,7 @@
     {
       "year": 1786,
       "month": 5,
-      "variance": 0.210
+      "variance": 0.21
     },
     {
       "year": 1786,
@@ -2049,7 +2049,7 @@
     {
       "year": 1787,
       "month": 2,
-      "variance": -0.510
+      "variance": -0.51
     },
     {
       "year": 1787,
@@ -2064,7 +2064,7 @@
     {
       "year": 1787,
       "month": 5,
-      "variance": 0.030
+      "variance": 0.03
     },
     {
       "year": 1787,
@@ -2084,12 +2084,12 @@
     {
       "year": 1787,
       "month": 9,
-      "variance": -1.690
+      "variance": -1.69
     },
     {
       "year": 1787,
       "month": 10,
-      "variance": -1.400
+      "variance": -1.4
     },
     {
       "year": 1787,
@@ -2154,12 +2154,12 @@
     {
       "year": 1788,
       "month": 11,
-      "variance": 0.070
+      "variance": 0.07
     },
     {
       "year": 1788,
       "month": 12,
-      "variance": -2.040
+      "variance": -2.04
     },
     {
       "year": 1789,
@@ -2199,7 +2199,7 @@
     {
       "year": 1789,
       "month": 8,
-      "variance": -0.040
+      "variance": -0.04
     },
     {
       "year": 1789,
@@ -2209,7 +2209,7 @@
     {
       "year": 1789,
       "month": 10,
-      "variance": -1.790
+      "variance": -1.79
     },
     {
       "year": 1789,
@@ -2244,7 +2244,7 @@
     {
       "year": 1790,
       "month": 5,
-      "variance": -1.040
+      "variance": -1.04
     },
     {
       "year": 1790,
@@ -2339,7 +2339,7 @@
     {
       "year": 1791,
       "month": 12,
-      "variance": 0.050
+      "variance": 0.05
     },
     {
       "year": 1792,
@@ -2434,12 +2434,12 @@
     {
       "year": 1793,
       "month": 7,
-      "variance": -0.050
+      "variance": -0.05
     },
     {
       "year": 1793,
       "month": 8,
-      "variance": -0.660
+      "variance": -0.66
     },
     {
       "year": 1793,
@@ -2919,7 +2919,7 @@
     {
       "year": 1801,
       "month": 8,
-      "variance": -0.600
+      "variance": -0.6
     },
     {
       "year": 1801,
@@ -3024,7 +3024,7 @@
     {
       "year": 1803,
       "month": 5,
-      "variance": 0.570
+      "variance": 0.57
     },
     {
       "year": 1803,
@@ -3074,7 +3074,7 @@
     {
       "year": 1804,
       "month": 3,
-      "variance": -0.930
+      "variance": -0.93
     },
     {
       "year": 1804,
@@ -3129,7 +3129,7 @@
     {
       "year": 1805,
       "month": 2,
-      "variance": -0.570
+      "variance": -0.57
     },
     {
       "year": 1805,
@@ -3214,7 +3214,7 @@
     {
       "year": 1806,
       "month": 7,
-      "variance": -0.410
+      "variance": -0.41
     },
     {
       "year": 1806,
@@ -3244,7 +3244,7 @@
     {
       "year": 1807,
       "month": 1,
-      "variance": -1.510
+      "variance": -1.51
     },
     {
       "year": 1807,
@@ -3269,7 +3269,7 @@
     {
       "year": 1807,
       "month": 6,
-      "variance": -0.200
+      "variance": -0.2
     },
     {
       "year": 1807,
@@ -3304,7 +3304,7 @@
     {
       "year": 1808,
       "month": 1,
-      "variance": -1.430
+      "variance": -1.43
     },
     {
       "year": 1808,
@@ -3314,7 +3314,7 @@
     {
       "year": 1808,
       "month": 3,
-      "variance": -1.040
+      "variance": -1.04
     },
     {
       "year": 1808,
@@ -3354,7 +3354,7 @@
     {
       "year": 1808,
       "month": 11,
-      "variance": -1.840
+      "variance": -1.84
     },
     {
       "year": 1808,
@@ -3404,7 +3404,7 @@
     {
       "year": 1809,
       "month": 9,
-      "variance": -1.060
+      "variance": -1.06
     },
     {
       "year": 1809,
@@ -3424,7 +3424,7 @@
     {
       "year": 1810,
       "month": 1,
-      "variance": -1.550
+      "variance": -1.55
     },
     {
       "year": 1810,
@@ -3444,7 +3444,7 @@
     {
       "year": 1810,
       "month": 5,
-      "variance": -2.220
+      "variance": -2.22
     },
     {
       "year": 1810,
@@ -3474,7 +3474,7 @@
     {
       "year": 1810,
       "month": 11,
-      "variance": -2.300
+      "variance": -2.3
     },
     {
       "year": 1810,
@@ -3504,7 +3504,7 @@
     {
       "year": 1811,
       "month": 5,
-      "variance": -1.850
+      "variance": -1.85
     },
     {
       "year": 1811,
@@ -3634,7 +3634,7 @@
     {
       "year": 1813,
       "month": 7,
-      "variance": 0.060
+      "variance": 0.06
     },
     {
       "year": 1813,
@@ -3649,7 +3649,7 @@
     {
       "year": 1813,
       "month": 10,
-      "variance": -0.570
+      "variance": -0.57
     },
     {
       "year": 1813,
@@ -3799,7 +3799,7 @@
     {
       "year": 1816,
       "month": 4,
-      "variance": -0.820
+      "variance": -0.82
     },
     {
       "year": 1816,
@@ -3884,7 +3884,7 @@
     {
       "year": 1817,
       "month": 9,
-      "variance": -3.250
+      "variance": -3.25
     },
     {
       "year": 1817,
@@ -3939,7 +3939,7 @@
     {
       "year": 1818,
       "month": 8,
-      "variance": -0.760
+      "variance": -0.76
     },
     {
       "year": 1818,
@@ -3964,7 +3964,7 @@
     {
       "year": 1819,
       "month": 1,
-      "variance": -1.610
+      "variance": -1.61
     },
     {
       "year": 1819,
@@ -3984,7 +3984,7 @@
     {
       "year": 1819,
       "month": 5,
-      "variance": -1.560
+      "variance": -1.56
     },
     {
       "year": 1819,
@@ -4059,7 +4059,7 @@
     {
       "year": 1820,
       "month": 8,
-      "variance": -2.050
+      "variance": -2.05
     },
     {
       "year": 1820,
@@ -4089,7 +4089,7 @@
     {
       "year": 1821,
       "month": 2,
-      "variance": 0.450
+      "variance": 0.45
     },
     {
       "year": 1821,
@@ -4099,17 +4099,17 @@
     {
       "year": 1821,
       "month": 4,
-      "variance": -0.740
+      "variance": -0.74
     },
     {
       "year": 1821,
       "month": 5,
-      "variance": -0.200
+      "variance": -0.2
     },
     {
       "year": 1821,
       "month": 6,
-      "variance": -1.030
+      "variance": -1.03
     },
     {
       "year": 1821,
@@ -4199,7 +4199,7 @@
     {
       "year": 1822,
       "month": 12,
-      "variance": -2.670
+      "variance": -2.67
     },
     {
       "year": 1823,
@@ -4379,7 +4379,7 @@
     {
       "year": 1825,
       "month": 12,
-      "variance": -0.510
+      "variance": -0.51
     },
     {
       "year": 1826,
@@ -4524,7 +4524,7 @@
     {
       "year": 1828,
       "month": 5,
-      "variance": -0.200
+      "variance": -0.2
     },
     {
       "year": 1828,
@@ -4634,12 +4634,12 @@
     {
       "year": 1830,
       "month": 3,
-      "variance": -1.040
+      "variance": -1.04
     },
     {
       "year": 1830,
       "month": 4,
-      "variance": 0.320
+      "variance": 0.32
     },
     {
       "year": 1830,
@@ -4659,7 +4659,7 @@
     {
       "year": 1830,
       "month": 8,
-      "variance": -0.690
+      "variance": -0.69
     },
     {
       "year": 1830,
@@ -4674,7 +4674,7 @@
     {
       "year": 1830,
       "month": 11,
-      "variance": 1.350
+      "variance": 1.35
     },
     {
       "year": 1830,
@@ -4789,7 +4789,7 @@
     {
       "year": 1832,
       "month": 10,
-      "variance": -0.890
+      "variance": -0.89
     },
     {
       "year": 1832,
@@ -4804,7 +4804,7 @@
     {
       "year": 1833,
       "month": 1,
-      "variance": -0.710
+      "variance": -0.71
     },
     {
       "year": 1833,
@@ -4854,7 +4854,7 @@
     {
       "year": 1833,
       "month": 11,
-      "variance": 0.430
+      "variance": 0.43
     },
     {
       "year": 1833,
@@ -4874,7 +4874,7 @@
     {
       "year": 1834,
       "month": 3,
-      "variance": 0.170
+      "variance": 0.17
     },
     {
       "year": 1834,
@@ -4954,7 +4954,7 @@
     {
       "year": 1835,
       "month": 7,
-      "variance": -1.570
+      "variance": -1.57
     },
     {
       "year": 1835,
@@ -4989,7 +4989,7 @@
     {
       "year": 1836,
       "month": 2,
-      "variance": -1.050
+      "variance": -1.05
     },
     {
       "year": 1836,
@@ -4999,7 +4999,7 @@
     {
       "year": 1836,
       "month": 4,
-      "variance": -1.240
+      "variance": -1.24
     },
     {
       "year": 1836,
@@ -5019,7 +5019,7 @@
     {
       "year": 1836,
       "month": 8,
-      "variance": -1.740
+      "variance": -1.74
     },
     {
       "year": 1836,
@@ -5059,12 +5059,12 @@
     {
       "year": 1837,
       "month": 4,
-      "variance": -2.330
+      "variance": -2.33
     },
     {
       "year": 1837,
       "month": 5,
-      "variance": -1.610
+      "variance": -1.61
     },
     {
       "year": 1837,
@@ -5104,7 +5104,7 @@
     {
       "year": 1838,
       "month": 1,
-      "variance": -3.280
+      "variance": -3.28
     },
     {
       "year": 1838,
@@ -5159,7 +5159,7 @@
     {
       "year": 1838,
       "month": 12,
-      "variance": -1.090
+      "variance": -1.09
     },
     {
       "year": 1839,
@@ -5184,7 +5184,7 @@
     {
       "year": 1839,
       "month": 5,
-      "variance": -1.340
+      "variance": -1.34
     },
     {
       "year": 1839,
@@ -5239,7 +5239,7 @@
     {
       "year": 1840,
       "month": 4,
-      "variance": -0.600
+      "variance": -0.6
     },
     {
       "year": 1840,
@@ -5284,7 +5284,7 @@
     {
       "year": 1841,
       "month": 1,
-      "variance": -2.020
+      "variance": -2.02
     },
     {
       "year": 1841,
@@ -5294,7 +5294,7 @@
     {
       "year": 1841,
       "month": 3,
-      "variance": -2.130
+      "variance": -2.13
     },
     {
       "year": 1841,
@@ -5334,7 +5334,7 @@
     {
       "year": 1841,
       "month": 11,
-      "variance": -1.440
+      "variance": -1.44
     },
     {
       "year": 1841,
@@ -5374,7 +5374,7 @@
     {
       "year": 1842,
       "month": 7,
-      "variance": -1.000
+      "variance": -1.0
     },
     {
       "year": 1842,
@@ -5404,7 +5404,7 @@
     {
       "year": 1843,
       "month": 1,
-      "variance": 0.370
+      "variance": 0.37
     },
     {
       "year": 1843,
@@ -5469,7 +5469,7 @@
     {
       "year": 1844,
       "month": 2,
-      "variance": -1.280
+      "variance": -1.28
     },
     {
       "year": 1844,
@@ -5489,7 +5489,7 @@
     {
       "year": 1844,
       "month": 6,
-      "variance": -0.860
+      "variance": -0.86
     },
     {
       "year": 1844,
@@ -5549,7 +5549,7 @@
     {
       "year": 1845,
       "month": 6,
-      "variance": -0.830
+      "variance": -0.83
     },
     {
       "year": 1845,
@@ -5594,7 +5594,7 @@
     {
       "year": 1846,
       "month": 3,
-      "variance": 0.920
+      "variance": 0.92
     },
     {
       "year": 1846,
@@ -5659,7 +5659,7 @@
     {
       "year": 1847,
       "month": 4,
-      "variance": -0.450
+      "variance": -0.45
     },
     {
       "year": 1847,
@@ -5679,7 +5679,7 @@
     {
       "year": 1847,
       "month": 8,
-      "variance": -0.610
+      "variance": -0.61
     },
     {
       "year": 1847,
@@ -5714,7 +5714,7 @@
     {
       "year": 1848,
       "month": 3,
-      "variance": -0.600
+      "variance": -0.6
     },
     {
       "year": 1848,
@@ -5774,7 +5774,7 @@
     {
       "year": 1849,
       "month": 3,
-      "variance": -0.070
+      "variance": -0.07
     },
     {
       "year": 1849,
@@ -5794,7 +5794,7 @@
     {
       "year": 1849,
       "month": 7,
-      "variance": -0.080
+      "variance": -0.08
     },
     {
       "year": 1849,
@@ -5854,7 +5854,7 @@
     {
       "year": 1850,
       "month": 7,
-      "variance": -0.040
+      "variance": -0.04
     },
     {
       "year": 1850,
@@ -5869,7 +5869,7 @@
     {
       "year": 1850,
       "month": 10,
-      "variance": -1.240
+      "variance": -1.24
     },
     {
       "year": 1850,
@@ -5884,7 +5884,7 @@
     {
       "year": 1851,
       "month": 1,
-      "variance": -0.220
+      "variance": -0.22
     },
     {
       "year": 1851,
@@ -5894,7 +5894,7 @@
     {
       "year": 1851,
       "month": 3,
-      "variance": -1.220
+      "variance": -1.22
     },
     {
       "year": 1851,
@@ -5909,7 +5909,7 @@
     {
       "year": 1851,
       "month": 6,
-      "variance": -0.260
+      "variance": -0.26
     },
     {
       "year": 1851,
@@ -5974,7 +5974,7 @@
     {
       "year": 1852,
       "month": 7,
-      "variance": -0.060
+      "variance": -0.06
     },
     {
       "year": 1852,
@@ -6049,17 +6049,17 @@
     {
       "year": 1853,
       "month": 10,
-      "variance": -0.810
+      "variance": -0.81
     },
     {
       "year": 1853,
       "month": 11,
-      "variance": -1.380
+      "variance": -1.38
     },
     {
       "year": 1853,
       "month": 12,
-      "variance": -0.820
+      "variance": -0.82
     },
     {
       "year": 1854,
@@ -6114,7 +6114,7 @@
     {
       "year": 1854,
       "month": 11,
-      "variance": -0.420
+      "variance": -0.42
     },
     {
       "year": 1854,
@@ -6134,7 +6134,7 @@
     {
       "year": 1855,
       "month": 3,
-      "variance": -0.780
+      "variance": -0.78
     },
     {
       "year": 1855,
@@ -6149,7 +6149,7 @@
     {
       "year": 1855,
       "month": 6,
-      "variance": -0.660
+      "variance": -0.66
     },
     {
       "year": 1855,
@@ -6194,12 +6194,12 @@
     {
       "year": 1856,
       "month": 3,
-      "variance": -1.010
+      "variance": -1.01
     },
     {
       "year": 1856,
       "month": 4,
-      "variance": -0.670
+      "variance": -0.67
     },
     {
       "year": 1856,
@@ -6224,12 +6224,12 @@
     {
       "year": 1856,
       "month": 9,
-      "variance": -1.240
+      "variance": -1.24
     },
     {
       "year": 1856,
       "month": 10,
-      "variance": -1.210
+      "variance": -1.21
     },
     {
       "year": 1856,
@@ -6244,7 +6244,7 @@
     {
       "year": 1857,
       "month": 1,
-      "variance": -0.760
+      "variance": -0.76
     },
     {
       "year": 1857,
@@ -6339,7 +6339,7 @@
     {
       "year": 1858,
       "month": 8,
-      "variance": -0.740
+      "variance": -0.74
     },
     {
       "year": 1858,
@@ -6359,7 +6359,7 @@
     {
       "year": 1858,
       "month": 12,
-      "variance": -1.190
+      "variance": -1.19
     },
     {
       "year": 1859,
@@ -6369,12 +6369,12 @@
     {
       "year": 1859,
       "month": 2,
-      "variance": -0.610
+      "variance": -0.61
     },
     {
       "year": 1859,
       "month": 3,
-      "variance": -0.330
+      "variance": -0.33
     },
     {
       "year": 1859,
@@ -6439,7 +6439,7 @@
     {
       "year": 1860,
       "month": 4,
-      "variance": -0.660
+      "variance": -0.66
     },
     {
       "year": 1860,
@@ -6454,7 +6454,7 @@
     {
       "year": 1860,
       "month": 7,
-      "variance": -0.230
+      "variance": -0.23
     },
     {
       "year": 1860,
@@ -6474,7 +6474,7 @@
     {
       "year": 1860,
       "month": 11,
-      "variance": -1.100
+      "variance": -1.1
     },
     {
       "year": 1860,
@@ -6564,7 +6564,7 @@
     {
       "year": 1862,
       "month": 5,
-      "variance": -0.670
+      "variance": -0.67
     },
     {
       "year": 1862,
@@ -6599,7 +6599,7 @@
     {
       "year": 1862,
       "month": 12,
-      "variance": -2.010
+      "variance": -2.01
     },
     {
       "year": 1863,
@@ -6629,7 +6629,7 @@
     {
       "year": 1863,
       "month": 6,
-      "variance": -0.780
+      "variance": -0.78
     },
     {
       "year": 1863,
@@ -6689,7 +6689,7 @@
     {
       "year": 1864,
       "month": 6,
-      "variance": -0.190
+      "variance": -0.19
     },
     {
       "year": 1864,
@@ -6899,7 +6899,7 @@
     {
       "year": 1867,
       "month": 12,
-      "variance": 0.220
+      "variance": 0.22
     },
     {
       "year": 1868,
@@ -6919,7 +6919,7 @@
     {
       "year": 1868,
       "month": 4,
-      "variance": -0.250
+      "variance": -0.25
     },
     {
       "year": 1868,
@@ -6944,7 +6944,7 @@
     {
       "year": 1868,
       "month": 9,
-      "variance": -0.540
+      "variance": -0.54
     },
     {
       "year": 1868,
@@ -7019,7 +7019,7 @@
     {
       "year": 1869,
       "month": 12,
-      "variance": -1.010
+      "variance": -1.01
     },
     {
       "year": 1870,
@@ -7054,7 +7054,7 @@
     {
       "year": 1870,
       "month": 7,
-      "variance": 0.120
+      "variance": 0.12
     },
     {
       "year": 1870,
@@ -7184,7 +7184,7 @@
     {
       "year": 1872,
       "month": 9,
-      "variance": -0.220
+      "variance": -0.22
     },
     {
       "year": 1872,
@@ -7344,7 +7344,7 @@
     {
       "year": 1875,
       "month": 5,
-      "variance": -0.630
+      "variance": -0.63
     },
     {
       "year": 1875,
@@ -7499,7 +7499,7 @@
     {
       "year": 1877,
       "month": 12,
-      "variance": -0.660
+      "variance": -0.66
     },
     {
       "year": 1878,
@@ -7514,7 +7514,7 @@
     {
       "year": 1878,
       "month": 3,
-      "variance": 1.240
+      "variance": 1.24
     },
     {
       "year": 1878,
@@ -7534,7 +7534,7 @@
     {
       "year": 1878,
       "month": 7,
-      "variance": 0.420
+      "variance": 0.42
     },
     {
       "year": 1878,
@@ -7594,7 +7594,7 @@
     {
       "year": 1879,
       "month": 7,
-      "variance": -0.160
+      "variance": -0.16
     },
     {
       "year": 1879,
@@ -7699,12 +7699,12 @@
     {
       "year": 1881,
       "month": 4,
-      "variance": -0.020
+      "variance": -0.02
     },
     {
       "year": 1881,
       "month": 5,
-      "variance": -0.190
+      "variance": -0.19
     },
     {
       "year": 1881,
@@ -7714,7 +7714,7 @@
     {
       "year": 1881,
       "month": 7,
-      "variance": -0.170
+      "variance": -0.17
     },
     {
       "year": 1881,
@@ -7799,12 +7799,12 @@
     {
       "year": 1882,
       "month": 12,
-      "variance": -1.450
+      "variance": -1.45
     },
     {
       "year": 1883,
       "month": 1,
-      "variance": -1.130
+      "variance": -1.13
     },
     {
       "year": 1883,
@@ -7914,7 +7914,7 @@
     {
       "year": 1884,
       "month": 11,
-      "variance": -0.970
+      "variance": -0.97
     },
     {
       "year": 1884,
@@ -7934,7 +7934,7 @@
     {
       "year": 1885,
       "month": 3,
-      "variance": -0.690
+      "variance": -0.69
     },
     {
       "year": 1885,
@@ -7954,7 +7954,7 @@
     {
       "year": 1885,
       "month": 7,
-      "variance": -0.390
+      "variance": -0.39
     },
     {
       "year": 1885,
@@ -8374,7 +8374,7 @@
     {
       "year": 1892,
       "month": 7,
-      "variance": -0.520
+      "variance": -0.52
     },
     {
       "year": 1892,
@@ -8519,7 +8519,7 @@
     {
       "year": 1894,
       "month": 12,
-      "variance": -0.470
+      "variance": -0.47
     },
     {
       "year": 1895,
@@ -8569,7 +8569,7 @@
     {
       "year": 1895,
       "month": 10,
-      "variance": -0.140
+      "variance": -0.14
     },
     {
       "year": 1895,
@@ -8624,7 +8624,7 @@
     {
       "year": 1896,
       "month": 9,
-      "variance": -0.190
+      "variance": -0.19
     },
     {
       "year": 1896,
@@ -8664,7 +8664,7 @@
     {
       "year": 1897,
       "month": 5,
-      "variance": 0.030
+      "variance": 0.03
     },
     {
       "year": 1897,
@@ -8714,7 +8714,7 @@
     {
       "year": 1898,
       "month": 3,
-      "variance": -1.510
+      "variance": -1.51
     },
     {
       "year": 1898,
@@ -8734,7 +8734,7 @@
     {
       "year": 1898,
       "month": 7,
-      "variance": -0.250
+      "variance": -0.25
     },
     {
       "year": 1898,
@@ -8789,7 +8789,7 @@
     {
       "year": 1899,
       "month": 6,
-      "variance": -0.620
+      "variance": -0.62
     },
     {
       "year": 1899,
@@ -8804,7 +8804,7 @@
     {
       "year": 1899,
       "month": 9,
-      "variance": 0.030
+      "variance": 0.03
     },
     {
       "year": 1899,
@@ -8844,7 +8844,7 @@
     {
       "year": 1900,
       "month": 5,
-      "variance": 0.010
+      "variance": 0.01
     },
     {
       "year": 1900,
@@ -8954,7 +8954,7 @@
     {
       "year": 1902,
       "month": 3,
-      "variance": -0.440
+      "variance": -0.44
     },
     {
       "year": 1902,
@@ -8994,7 +8994,7 @@
     {
       "year": 1902,
       "month": 11,
-      "variance": -0.910
+      "variance": -0.91
     },
     {
       "year": 1902,
@@ -9079,7 +9079,7 @@
     {
       "year": 1904,
       "month": 4,
-      "variance": -0.630
+      "variance": -0.63
     },
     {
       "year": 1904,
@@ -9119,7 +9119,7 @@
     {
       "year": 1904,
       "month": 12,
-      "variance": -0.330
+      "variance": -0.33
     },
     {
       "year": 1905,
@@ -9229,12 +9229,12 @@
     {
       "year": 1906,
       "month": 10,
-      "variance": 0.020
+      "variance": 0.02
     },
     {
       "year": 1906,
       "month": 11,
-      "variance": -0.600
+      "variance": -0.6
     },
     {
       "year": 1906,
@@ -9314,7 +9314,7 @@
     {
       "year": 1908,
       "month": 3,
-      "variance": -1.170
+      "variance": -1.17
     },
     {
       "year": 1908,
@@ -9444,7 +9444,7 @@
     {
       "year": 1910,
       "month": 5,
-      "variance": -0.370
+      "variance": -0.37
     },
     {
       "year": 1910,
@@ -9479,7 +9479,7 @@
     {
       "year": 1910,
       "month": 12,
-      "variance": -0.930
+      "variance": -0.93
     },
     {
       "year": 1911,
@@ -9499,7 +9499,7 @@
     {
       "year": 1911,
       "month": 4,
-      "variance": -0.350
+      "variance": -0.35
     },
     {
       "year": 1911,
@@ -9609,7 +9609,7 @@
     {
       "year": 1913,
       "month": 2,
-      "variance": -0.810
+      "variance": -0.81
     },
     {
       "year": 1913,
@@ -9619,7 +9619,7 @@
     {
       "year": 1913,
       "month": 4,
-      "variance": -0.320
+      "variance": -0.32
     },
     {
       "year": 1913,
@@ -9649,7 +9649,7 @@
     {
       "year": 1913,
       "month": 10,
-      "variance": -0.240
+      "variance": -0.24
     },
     {
       "year": 1913,
@@ -9779,7 +9779,7 @@
     {
       "year": 1915,
       "month": 12,
-      "variance": -0.020
+      "variance": -0.02
     },
     {
       "year": 1916,
@@ -9794,7 +9794,7 @@
     {
       "year": 1916,
       "month": 3,
-      "variance": -0.480
+      "variance": -0.48
     },
     {
       "year": 1916,
@@ -9814,7 +9814,7 @@
     {
       "year": 1916,
       "month": 7,
-      "variance": -0.340
+      "variance": -0.34
     },
     {
       "year": 1916,
@@ -9859,7 +9859,7 @@
     {
       "year": 1917,
       "month": 4,
-      "variance": -0.490
+      "variance": -0.49
     },
     {
       "year": 1917,
@@ -9869,7 +9869,7 @@
     {
       "year": 1917,
       "month": 6,
-      "variance": -0.620
+      "variance": -0.62
     },
     {
       "year": 1917,
@@ -9889,7 +9889,7 @@
     {
       "year": 1917,
       "month": 10,
-      "variance": -0.740
+      "variance": -0.74
     },
     {
       "year": 1917,
@@ -9924,7 +9924,7 @@
     {
       "year": 1918,
       "month": 5,
-      "variance": -0.810
+      "variance": -0.81
     },
     {
       "year": 1918,
@@ -9954,7 +9954,7 @@
     {
       "year": 1918,
       "month": 11,
-      "variance": -0.470
+      "variance": -0.47
     },
     {
       "year": 1918,
@@ -9984,7 +9984,7 @@
     {
       "year": 1919,
       "month": 5,
-      "variance": -0.380
+      "variance": -0.38
     },
     {
       "year": 1919,
@@ -10049,7 +10049,7 @@
     {
       "year": 1920,
       "month": 6,
-      "variance": -0.440
+      "variance": -0.44
     },
     {
       "year": 1920,
@@ -10074,7 +10074,7 @@
     {
       "year": 1920,
       "month": 11,
-      "variance": -0.580
+      "variance": -0.58
     },
     {
       "year": 1920,
@@ -10154,7 +10154,7 @@
     {
       "year": 1922,
       "month": 3,
-      "variance": -0.170
+      "variance": -0.17
     },
     {
       "year": 1922,
@@ -10189,7 +10189,7 @@
     {
       "year": 1922,
       "month": 10,
-      "variance": -0.220
+      "variance": -0.22
     },
     {
       "year": 1922,
@@ -10374,7 +10374,7 @@
     {
       "year": 1925,
       "month": 11,
-      "variance": 0.200
+      "variance": 0.2
     },
     {
       "year": 1925,
@@ -10414,7 +10414,7 @@
     {
       "year": 1926,
       "month": 7,
-      "variance": -0.230
+      "variance": -0.23
     },
     {
       "year": 1926,
@@ -10449,7 +10449,7 @@
     {
       "year": 1927,
       "month": 2,
-      "variance": -0.150
+      "variance": -0.15
     },
     {
       "year": 1927,
@@ -10494,7 +10494,7 @@
     {
       "year": 1927,
       "month": 11,
-      "variance": 0.200
+      "variance": 0.2
     },
     {
       "year": 1927,
@@ -10504,12 +10504,12 @@
     {
       "year": 1928,
       "month": 1,
-      "variance": 0.440
+      "variance": 0.44
     },
     {
       "year": 1928,
       "month": 2,
-      "variance": 0.140
+      "variance": 0.14
     },
     {
       "year": 1928,
@@ -10519,7 +10519,7 @@
     {
       "year": 1928,
       "month": 4,
-      "variance": -0.090
+      "variance": -0.09
     },
     {
       "year": 1928,
@@ -10609,7 +10609,7 @@
     {
       "year": 1929,
       "month": 10,
-      "variance": 0.200
+      "variance": 0.2
     },
     {
       "year": 1929,
@@ -10689,7 +10689,7 @@
     {
       "year": 1931,
       "month": 2,
-      "variance": -0.520
+      "variance": -0.52
     },
     {
       "year": 1931,
@@ -10739,7 +10739,7 @@
     {
       "year": 1931,
       "month": 12,
-      "variance": 0.350
+      "variance": 0.35
     },
     {
       "year": 1932,
@@ -10769,7 +10769,7 @@
     {
       "year": 1932,
       "month": 6,
-      "variance": -0.150
+      "variance": -0.15
     },
     {
       "year": 1932,
@@ -10834,7 +10834,7 @@
     {
       "year": 1933,
       "month": 7,
-      "variance": -0.170
+      "variance": -0.17
     },
     {
       "year": 1933,
@@ -10949,7 +10949,7 @@
     {
       "year": 1935,
       "month": 6,
-      "variance": -0.180
+      "variance": -0.18
     },
     {
       "year": 1935,
@@ -10959,7 +10959,7 @@
     {
       "year": 1935,
       "month": 8,
-      "variance": -0.130
+      "variance": -0.13
     },
     {
       "year": 1935,
@@ -11319,7 +11319,7 @@
     {
       "year": 1941,
       "month": 8,
-      "variance": 0.090
+      "variance": 0.09
     },
     {
       "year": 1941,
@@ -11444,7 +11444,7 @@
     {
       "year": 1943,
       "month": 9,
-      "variance": -0.050
+      "variance": -0.05
     },
     {
       "year": 1943,
@@ -11464,7 +11464,7 @@
     {
       "year": 1944,
       "month": 1,
-      "variance": 0.920
+      "variance": 0.92
     },
     {
       "year": 1944,
@@ -11529,7 +11529,7 @@
     {
       "year": 1945,
       "month": 2,
-      "variance": -0.550
+      "variance": -0.55
     },
     {
       "year": 1945,
@@ -11539,7 +11539,7 @@
     {
       "year": 1945,
       "month": 4,
-      "variance": 0.320
+      "variance": 0.32
     },
     {
       "year": 1945,
@@ -11614,7 +11614,7 @@
     {
       "year": 1946,
       "month": 7,
-      "variance": 0.000
+      "variance": 0.0
     },
     {
       "year": 1946,
@@ -11679,12 +11679,12 @@
     {
       "year": 1947,
       "month": 8,
-      "variance": -0.100
+      "variance": -0.1
     },
     {
       "year": 1947,
       "month": 9,
-      "variance": 0.030
+      "variance": 0.03
     },
     {
       "year": 1947,
@@ -11719,7 +11719,7 @@
     {
       "year": 1948,
       "month": 4,
-      "variance": 0.150
+      "variance": 0.15
     },
     {
       "year": 1948,
@@ -11814,7 +11814,7 @@
     {
       "year": 1949,
       "month": 11,
-      "variance": 0.040
+      "variance": 0.04
     },
     {
       "year": 1949,
@@ -11824,7 +11824,7 @@
     {
       "year": 1950,
       "month": 1,
-      "variance": -0.600
+      "variance": -0.6
     },
     {
       "year": 1950,
@@ -11959,12 +11959,12 @@
     {
       "year": 1952,
       "month": 4,
-      "variance": 0.110
+      "variance": 0.11
     },
     {
       "year": 1952,
       "month": 5,
-      "variance": -0.000
+      "variance": -0.0
     },
     {
       "year": 1952,
@@ -12089,7 +12089,7 @@
     {
       "year": 1954,
       "month": 6,
-      "variance": -0.120
+      "variance": -0.12
     },
     {
       "year": 1954,
@@ -12144,7 +12144,7 @@
     {
       "year": 1955,
       "month": 5,
-      "variance": -0.170
+      "variance": -0.17
     },
     {
       "year": 1955,
@@ -12159,7 +12159,7 @@
     {
       "year": 1955,
       "month": 8,
-      "variance": 0.350
+      "variance": 0.35
     },
     {
       "year": 1955,
@@ -12184,7 +12184,7 @@
     {
       "year": 1956,
       "month": 1,
-      "variance": -0.140
+      "variance": -0.14
     },
     {
       "year": 1956,
@@ -12194,7 +12194,7 @@
     {
       "year": 1956,
       "month": 3,
-      "variance": -0.430
+      "variance": -0.43
     },
     {
       "year": 1956,
@@ -12239,7 +12239,7 @@
     {
       "year": 1956,
       "month": 12,
-      "variance": -0.050
+      "variance": -0.05
     },
     {
       "year": 1957,
@@ -12329,7 +12329,7 @@
     {
       "year": 1958,
       "month": 6,
-      "variance": -0.340
+      "variance": -0.34
     },
     {
       "year": 1958,
@@ -12364,7 +12364,7 @@
     {
       "year": 1959,
       "month": 1,
-      "variance": 0.340
+      "variance": 0.34
     },
     {
       "year": 1959,
@@ -12399,7 +12399,7 @@
     {
       "year": 1959,
       "month": 8,
-      "variance": -0.080
+      "variance": -0.08
     },
     {
       "year": 1959,
@@ -12529,7 +12529,7 @@
     {
       "year": 1961,
       "month": 10,
-      "variance": 0.060
+      "variance": 0.06
     },
     {
       "year": 1961,
@@ -12599,7 +12599,7 @@
     {
       "year": 1962,
       "month": 12,
-      "variance": 0.280
+      "variance": 0.28
     },
     {
       "year": 1963,
@@ -12664,7 +12664,7 @@
     {
       "year": 1964,
       "month": 1,
-      "variance": 0.260
+      "variance": 0.26
     },
     {
       "year": 1964,
@@ -12699,7 +12699,7 @@
     {
       "year": 1964,
       "month": 8,
-      "variance": -0.250
+      "variance": -0.25
     },
     {
       "year": 1964,
@@ -12764,7 +12764,7 @@
     {
       "year": 1965,
       "month": 9,
-      "variance": -0.390
+      "variance": -0.39
     },
     {
       "year": 1965,
@@ -12784,7 +12784,7 @@
     {
       "year": 1966,
       "month": 1,
-      "variance": -0.140
+      "variance": -0.14
     },
     {
       "year": 1966,
@@ -12794,7 +12794,7 @@
     {
       "year": 1966,
       "month": 3,
-      "variance": 0.200
+      "variance": 0.2
     },
     {
       "year": 1966,
@@ -12804,7 +12804,7 @@
     {
       "year": 1966,
       "month": 5,
-      "variance": -0.170
+      "variance": -0.17
     },
     {
       "year": 1966,
@@ -12814,7 +12814,7 @@
     {
       "year": 1966,
       "month": 7,
-      "variance": 0.170
+      "variance": 0.17
     },
     {
       "year": 1966,
@@ -12859,12 +12859,12 @@
     {
       "year": 1967,
       "month": 4,
-      "variance": 0.090
+      "variance": 0.09
     },
     {
       "year": 1967,
       "month": 5,
-      "variance": 0.290
+      "variance": 0.29
     },
     {
       "year": 1967,
@@ -12909,7 +12909,7 @@
     {
       "year": 1968,
       "month": 2,
-      "variance": 0.020
+      "variance": 0.02
     },
     {
       "year": 1968,
@@ -12934,7 +12934,7 @@
     {
       "year": 1968,
       "month": 7,
-      "variance": -0.370
+      "variance": -0.37
     },
     {
       "year": 1968,
@@ -12979,7 +12979,7 @@
     {
       "year": 1969,
       "month": 4,
-      "variance": 0.220
+      "variance": 0.22
     },
     {
       "year": 1969,
@@ -13019,7 +13019,7 @@
     {
       "year": 1969,
       "month": 12,
-      "variance": 0.550
+      "variance": 0.55
     },
     {
       "year": 1970,
@@ -13084,12 +13084,12 @@
     {
       "year": 1971,
       "month": 1,
-      "variance": 0.350
+      "variance": 0.35
     },
     {
       "year": 1971,
       "month": 2,
-      "variance": -0.340
+      "variance": -0.34
     },
     {
       "year": 1971,
@@ -13149,7 +13149,7 @@
     {
       "year": 1972,
       "month": 2,
-      "variance": -0.600
+      "variance": -0.6
     },
     {
       "year": 1972,
@@ -13169,7 +13169,7 @@
     {
       "year": 1972,
       "month": 6,
-      "variance": -0.020
+      "variance": -0.02
     },
     {
       "year": 1972,
@@ -13229,12 +13229,12 @@
     {
       "year": 1973,
       "month": 6,
-      "variance": 0.290
+      "variance": 0.29
     },
     {
       "year": 1973,
       "month": 7,
-      "variance": 0.020
+      "variance": 0.02
     },
     {
       "year": 1973,
@@ -13254,7 +13254,7 @@
     {
       "year": 1973,
       "month": 11,
-      "variance": 0.120
+      "variance": 0.12
     },
     {
       "year": 1973,
@@ -13389,7 +13389,7 @@
     {
       "year": 1976,
       "month": 2,
-      "variance": -0.170
+      "variance": -0.17
     },
     {
       "year": 1976,
@@ -13404,7 +13404,7 @@
     {
       "year": 1976,
       "month": 5,
-      "variance": -0.430
+      "variance": -0.43
     },
     {
       "year": 1976,
@@ -13439,7 +13439,7 @@
     {
       "year": 1976,
       "month": 12,
-      "variance": 0.040
+      "variance": 0.04
     },
     {
       "year": 1977,
@@ -13504,12 +13504,12 @@
     {
       "year": 1978,
       "month": 1,
-      "variance": 0.090
+      "variance": 0.09
     },
     {
       "year": 1978,
       "month": 2,
-      "variance": 0.250
+      "variance": 0.25
     },
     {
       "year": 1978,
@@ -13639,7 +13639,7 @@
     {
       "year": 1980,
       "month": 4,
-      "variance": 0.570
+      "variance": 0.57
     },
     {
       "year": 1980,
@@ -13814,7 +13814,7 @@
     {
       "year": 1983,
       "month": 3,
-      "variance": 0.370
+      "variance": 0.37
     },
     {
       "year": 1983,
@@ -13874,7 +13874,7 @@
     {
       "year": 1984,
       "month": 3,
-      "variance": 0.340
+      "variance": 0.34
     },
     {
       "year": 1984,
@@ -13954,7 +13954,7 @@
     {
       "year": 1985,
       "month": 7,
-      "variance": -0.410
+      "variance": -0.41
     },
     {
       "year": 1985,
@@ -13974,7 +13974,7 @@
     {
       "year": 1985,
       "month": 11,
-      "variance": -0.130
+      "variance": -0.13
     },
     {
       "year": 1985,
@@ -13984,7 +13984,7 @@
     {
       "year": 1986,
       "month": 1,
-      "variance": 0.710
+      "variance": 0.71
     },
     {
       "year": 1986,
@@ -14154,7 +14154,7 @@
     {
       "year": 1988,
       "month": 11,
-      "variance": 0.210
+      "variance": 0.21
     },
     {
       "year": 1988,
@@ -14219,7 +14219,7 @@
     {
       "year": 1989,
       "month": 12,
-      "variance": 0.780
+      "variance": 0.78
     },
     {
       "year": 1990,
@@ -14284,7 +14284,7 @@
     {
       "year": 1991,
       "month": 1,
-      "variance": 0.590
+      "variance": 0.59
     },
     {
       "year": 1991,
@@ -14309,7 +14309,7 @@
     {
       "year": 1991,
       "month": 6,
-      "variance": 0.720
+      "variance": 0.72
     },
     {
       "year": 1991,
@@ -14379,7 +14379,7 @@
     {
       "year": 1992,
       "month": 8,
-      "variance": -0.150
+      "variance": -0.15
     },
     {
       "year": 1992,
@@ -14399,7 +14399,7 @@
     {
       "year": 1992,
       "month": 12,
-      "variance": 0.440
+      "variance": 0.44
     },
     {
       "year": 1993,
@@ -14444,7 +14444,7 @@
     {
       "year": 1993,
       "month": 9,
-      "variance": -0.200
+      "variance": -0.2
     },
     {
       "year": 1993,
@@ -14459,7 +14459,7 @@
     {
       "year": 1993,
       "month": 12,
-      "variance": 0.400
+      "variance": 0.4
     },
     {
       "year": 1994,
@@ -14574,7 +14574,7 @@
     {
       "year": 1995,
       "month": 11,
-      "variance": 0.660
+      "variance": 0.66
     },
     {
       "year": 1995,
@@ -14654,12 +14654,12 @@
     {
       "year": 1997,
       "month": 3,
-      "variance": 0.660
+      "variance": 0.66
     },
     {
       "year": 1997,
       "month": 4,
-      "variance": 0.490
+      "variance": 0.49
     },
     {
       "year": 1997,
@@ -14749,7 +14749,7 @@
     {
       "year": 1998,
       "month": 10,
-      "variance": 0.700
+      "variance": 0.7
     },
     {
       "year": 1998,
@@ -14859,12 +14859,12 @@
     {
       "year": 2000,
       "month": 8,
-      "variance": 0.580
+      "variance": 0.58
     },
     {
       "year": 2000,
       "month": 9,
-      "variance": 0.420
+      "variance": 0.42
     },
     {
       "year": 2000,
@@ -14939,7 +14939,7 @@
     {
       "year": 2001,
       "month": 12,
-      "variance": 0.880
+      "variance": 0.88
     },
     {
       "year": 2002,
@@ -15014,7 +15014,7 @@
     {
       "year": 2003,
       "month": 3,
-      "variance": 0.720
+      "variance": 0.72
     },
     {
       "year": 2003,
@@ -15074,7 +15074,7 @@
     {
       "year": 2004,
       "month": 3,
-      "variance": 0.990
+      "variance": 0.99
     },
     {
       "year": 2004,
@@ -15149,7 +15149,7 @@
     {
       "year": 2005,
       "month": 6,
-      "variance": 0.940
+      "variance": 0.94
     },
     {
       "year": 2005,
@@ -15219,7 +15219,7 @@
     {
       "year": 2006,
       "month": 8,
-      "variance": 0.990
+      "variance": 0.99
     },
     {
       "year": 2006,
@@ -15269,7 +15269,7 @@
     {
       "year": 2007,
       "month": 6,
-      "variance": 0.760
+      "variance": 0.76
     },
     {
       "year": 2007,
@@ -15294,7 +15294,7 @@
     {
       "year": 2007,
       "month": 11,
-      "variance": 1.000
+      "variance": 1.0
     },
     {
       "year": 2007,
@@ -15359,7 +15359,7 @@
     {
       "year": 2008,
       "month": 12,
-      "variance": 0.760
+      "variance": 0.76
     },
     {
       "year": 2009,
@@ -15369,7 +15369,7 @@
     {
       "year": 2009,
       "month": 2,
-      "variance": 0.880
+      "variance": 0.88
     },
     {
       "year": 2009,
@@ -15414,12 +15414,12 @@
     {
       "year": 2009,
       "month": 11,
-      "variance": 0.930
+      "variance": 0.93
     },
     {
       "year": 2009,
       "month": 12,
-      "variance": 0.680
+      "variance": 0.68
     },
     {
       "year": 2010,
@@ -15479,7 +15479,7 @@
     {
       "year": 2010,
       "month": 12,
-      "variance": 0.670
+      "variance": 0.67
     },
     {
       "year": 2011,
@@ -15509,7 +15509,7 @@
     {
       "year": 2011,
       "month": 6,
-      "variance": 0.840
+      "variance": 0.84
     },
     {
       "year": 2011,
@@ -15559,7 +15559,7 @@
     {
       "year": 2012,
       "month": 4,
-      "variance": 1.310
+      "variance": 1.31
     },
     {
       "year": 2012,
@@ -15584,7 +15584,7 @@
     {
       "year": 2012,
       "month": 9,
-      "variance": 0.930
+      "variance": 0.93
     },
     {
       "year": 2012,
@@ -15604,7 +15604,7 @@
     {
       "year": 2013,
       "month": 1,
-      "variance": 1.090
+      "variance": 1.09
     },
     {
       "year": 2013,
@@ -15669,7 +15669,7 @@
     {
       "year": 2014,
       "month": 2,
-      "variance": 0.290
+      "variance": 0.29
     },
     {
       "year": 2014,
@@ -15679,7 +15679,7 @@
     {
       "year": 2014,
       "month": 4,
-      "variance": 1.230
+      "variance": 1.23
     },
     {
       "year": 2014,
@@ -15699,7 +15699,7 @@
     {
       "year": 2014,
       "month": 8,
-      "variance": 0.940
+      "variance": 0.94
     },
     {
       "year": 2014,
@@ -15709,7 +15709,7 @@
     {
       "year": 2014,
       "month": 10,
-      "variance": 1.100
+      "variance": 1.1
     },
     {
       "year": 2014,
@@ -15729,7 +15729,7 @@
     {
       "year": 2015,
       "month": 2,
-      "variance": 1.450
+      "variance": 1.45
     },
     {
       "year": 2015,
@@ -15764,7 +15764,7 @@
     {
       "year": 2015,
       "month": 9,
-      "variance": 0.870
+      "variance": 0.87
     }
   ]
 }
