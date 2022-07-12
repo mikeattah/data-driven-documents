@@ -1,6 +1,7 @@
+// Source: https://www.educative.io/courses/master-d3-data-visualization
 async function draw() {
   // Data
-  const data = await d3.json("educative-nyc-weather-data-histogram.json");
+  const data = await d3.json("data.json");
 
   // Dimensions
   let dimensions = {
@@ -13,13 +14,14 @@ async function draw() {
   dimensions.ctrWidth = dimensions.width - dimensions.margins * 2;
   dimensions.ctrHeight = dimensions.height - dimensions.margins * 2;
 
-  // Draw Image
+  // Create SVG Image
   const svg = d3
     .select("#chart")
     .append("svg")
     .attr("width", dimensions.width)
     .attr("height", dimensions.height);
 
+  // Create Chart Container
   const ctr = svg
     .append("g") // <g>
     .attr(
@@ -39,18 +41,16 @@ async function draw() {
   const meanLine = ctr.append("line").classed("mean-line", true);
 
   function histogram(metric) {
-    const xAccessor = (d) => d.currently[metric],
-      yAccessor = (d) => d.length,
-      mean = d3.mean(data, xAccessor);
+    // Accessor Functions
+    const xAccessor = (d) => d.currently[metric];
+    const yAccessor = (d) => d.length;
 
-    // Draw Mean Line
-    meanLine
-      .raise()
-      .transition(updateTransition)
-      .attr("x1", xScale(mean))
-      .attr("y1", 0)
-      .attr("x2", xScale(mean))
-      .attr("y2", dimensions.ctrHeight);
+    // Create Mean of Current Metric
+    const mean = d3.mean(data, xAccessor);
+
+    // Transitions
+    const exitTransition = d3.transition().duration(500);
+    const updateTransition = exitTransition.transition().duration(500);
 
     // Create Scales
     const xScale = d3
@@ -74,9 +74,6 @@ async function draw() {
       .nice();
 
     // Draw Bars
-    const exitTransition = d3.transition().duration(500);
-    const updateTransition = exitTransition.transition().duration(500);
-
     ctr
       .selectAll("rect")
       .data(newData)
@@ -131,6 +128,15 @@ async function draw() {
       .attr("x", (d) => xScale(d.x0) + (xScale(d.x1) - xScale(d.x0)) / 2)
       .attr("y", (d) => yScale(yAccessor(d)) - 10)
       .text(yAccessor);
+
+    // Draw Mean Line
+    meanLine
+      .raise()
+      .transition(updateTransition)
+      .attr("x1", xScale(mean))
+      .attr("y1", 0)
+      .attr("x2", xScale(mean))
+      .attr("y2", dimensions.ctrHeight);
 
     // Draw Axis
     const xAxis = d3.axisBottom(xScale);

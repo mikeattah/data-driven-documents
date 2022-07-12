@@ -31,8 +31,8 @@ These projects were completed during [Educative's Master D3.js Data Visualizatio
 2. View Live Site: [Visualization of US State Population Data with Stacked Bar Chart](https://mikeattah.github.io/data-driven-documents/educative-us-state-population-stacked-bar-chart/)
    ![Stacked Bar Chart](public/visualization-of-us-state-population-data-with-stacked-bar-chart.png)
 
-3. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/educative-nyc-weather-histogram/)
-   ![X](public/X.png)
+3. View Live Site: [Visualization of New York City Weather Data with a Histogram](https://mikeattah.github.io/data-driven-documents/educative-nyc-weather-histogram/)
+   ![Histogram](public/visualization-of-new-york-city-weather-data-with-a-histogram.png)
 
 4. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/educative-nyc-weather-histogram/)
    ![X](public/X.png)
