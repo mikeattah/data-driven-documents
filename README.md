@@ -6,19 +6,19 @@ This repo contains ongoing and/or completed projects related to learning Data Vi
 
 These projects were completed for [freeCodeCamp's Data Visualization Certification Course](https://www.freecodecamp.org/learn/data-visualization/):
 
-1. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/educative-apple-stock-price-line-chart/)
+1. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/X/)
    ![X](public/X.png)
 
-2. View Live Site: [X](https://codepen.io/mikeattah/pen/WNObLjR)
+2. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/X/)
    ![X](public/X.png)
 
-3. View Live Site: [X](https://codepen.io/mikeattah/pen/gORpJZG)
+3. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/X/)
    ![X](public/X.png)
 
-4. View Live Site: [X](https://codepen.io/mikeattah/pen/KKqpjKJ)
+4. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/X/)
    ![X](public/X.png)
 
-5. View Live Site: [X](https://codepen.io/mikeattah/pen/gORadeV)
+5. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/X/)
    ![X](public/X.png)
 
 ## Educative's Master D3.js for Data Visualization Course
@@ -34,16 +34,17 @@ These projects were completed during [Educative's Master D3.js Data Visualizatio
 3. View Live Site: [Visualization of New York City Weather Data with a Histogram](https://mikeattah.github.io/data-driven-documents/educative-nyc-weather-histogram/)
    ![Histogram](public/visualization-of-new-york-city-weather-data-with-a-histogram.png)
 
-4. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/educative-us-household-income-heatmap/)
+4. View Live Site: [Visualization of US Household Income Data with a Heatmap
+   ](https://mikeattah.github.io/data-driven-documents/educative-us-household-income-heatmap/)
    ![Heatmap](public/visualization-of-us-household-income-data-with-a-heatmap.png)
 
-5. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/educative-nyc-weather-histogram/)
+5. View Live Site: [Visualization of US 2015 Population Data with Pie Chart](https://mikeattah.github.io/data-driven-documents/educative-us-2015-population-pie-chart/)
+   ![Pie Chart](public/visualization-of-us-2015-population-data-with-pie-chart.png)
+
+6. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/X/)
    ![X](public/X.png)
 
-6. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/educative-nyc-weather-histogram/)
-   ![X](public/X.png)
-
-7. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/educative-nyc-weather-histogram/)
+7. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/X/)
    ![X](public/X.png)
 
 ## Toolbox

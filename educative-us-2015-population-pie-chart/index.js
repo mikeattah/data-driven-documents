@@ -1,3 +1,4 @@
+// Source: https://www.educative.io/courses/master-d3-data-visualization
 async function draw() {
   // Data
   const data = await d3.csv("data.csv");
@@ -6,7 +7,7 @@ async function draw() {
   let dimensions = {
     width: 600,
     height: 600,
-    margins: 10,
+    margins: 15,
   };
 
   dimensions.ctrWidth = dimensions.width - dimensions.margins * 2;
