@@ -34,8 +34,8 @@ These projects were completed during [Educative's Master D3.js Data Visualizatio
 3. View Live Site: [Visualization of New York City Weather Data with a Histogram](https://mikeattah.github.io/data-driven-documents/educative-nyc-weather-histogram/)
    ![Histogram](public/visualization-of-new-york-city-weather-data-with-a-histogram.png)
 
-4. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/educative-nyc-weather-histogram/)
-   ![X](public/X.png)
+4. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/educative-us-household-income-heatmap/)
+   ![Heatmap](public/visualization-of-us-household-income-data-with-a-heatmap.png)
 
 5. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/educative-nyc-weather-histogram/)
    ![X](public/X.png)

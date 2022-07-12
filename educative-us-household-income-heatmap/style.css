@@ -1,18 +1,57 @@
-.title {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.sub-title {
-  text-align: center;
+html,
+body {
+  min-height: 100vh;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", "Roboto", sans-serif;
+  background-color: #483d8b;
 }
 
-.sub-title:not(:first-child) {
-  margin-top: 50px;
+.title-box {
+  width: 600px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #f7f7f7;
+  margin: 25px 0;
+  border-radius: 15px;
+}
+
+.sub-title-box {
+  width: 600px;
+  height: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  background-color: #f7f7f7;
+  margin-top: 25px;
+  border-radius: 15px;
 }
 
 .chart {
   width: 600px;
-  height: 150px;
+  height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #f7f7f7;
-  margin: 25px auto;
+  margin: 15px auto 25px auto;
+  border-radius: 15px;
+  position: relative;
 }
