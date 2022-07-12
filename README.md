@@ -16,8 +16,8 @@ These projects were completed for freeCodeCamp's Data Visualization Certificatio
 
 These projects were completed during [Educative's D3.js Course](https://www.educative.io/courses/master-d3-data-visualization):
 
-[Scatterplot](./visualization-of-new-york-city-weather-data with-a-scatterplot.png)
-[Visualization of New York City Weather Data with a Scatterplot](https://mikeattah.github.io/data-driven-documents/educative-nyc-weather-scatterplot/)
+1. [Visualization of New York City Weather Data with a Scatterplot](https://mikeattah.github.io/data-driven-documents/educative-nyc-weather-scatterplot/)
+![Scatterplot](./visualization-of-new-york-city-weather-data with-a-scatterplot.png)
 
 - [X](https://mikeattah.github.io/data-driven-documents/educative-nyc-weather-histogram/)
 - [X](https://mikeattah.github.io/data-driven-documents/educative-nyc-weather-histogram/)
