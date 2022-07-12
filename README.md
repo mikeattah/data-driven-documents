@@ -41,8 +41,8 @@ These projects were completed during [Educative's Master D3.js Data Visualizatio
 5. View Live Site: [Visualization of US 2015 Population Data with Pie Chart](https://mikeattah.github.io/data-driven-documents/educative-us-2015-population-pie-chart/)
    ![Pie Chart](public/visualization-of-us-2015-population-data-with-pie-chart.png)
 
-6. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/X/)
-   ![X](public/X.png)
+6. View Live Site: [Visualization of Apple Stock Price Data with Line Chart](https://mikeattah.github.io/data-driven-documents/educative-apple-stock-price-line-chart/)
+   ![Line Chart](public/visualization-of-apple-stock-price-data-with-line-chart.png)
 
 7. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/X/)
    ![X](public/X.png)

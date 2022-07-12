@@ -1,8 +1,15 @@
+// Source: https://www.educative.io/courses/master-d3-data-visualization
 async function draw() {
   // Data
-  const data = await d3.csv("educative-apple-stock-price-data-line-chart.csv");
+  const data = await d3.csv("data.csv");
 
+  // Parse Date
   const parseDate = d3.timeParse("%Y-%m-%d");
+
+  // Format Date
+  const dateFormatter = d3.timeFormat("%B %-d, %Y");
+
+  // Accessor Functions
   const xAccessor = (d) => parseDate(d.date);
   const yAccessor = (d) => parseInt(d.close);
 
@@ -16,14 +23,14 @@ async function draw() {
   dimensions.ctrWidth = dimensions.width - dimensions.margins * 2;
   dimensions.ctrHeight = dimensions.height - dimensions.margins * 2;
 
-  // Draw Image
+  // Create SVG Image
   const svg = d3
     .select("#chart")
     .append("svg")
     .attr("width", dimensions.width)
     .attr("height", dimensions.height);
 
-  // Draw Container
+  // Create Chart Container
   const ctr = svg
     .append("g") // <g>
     .attr(
@@ -31,9 +38,10 @@ async function draw() {
       `translate(${dimensions.margins}, ${dimensions.margins})`
     );
 
-  // Tooltip Selection
+  // Create Tooltip
   const tooltip = d3.select("#tooltip");
 
+  // Create Tooltip Dot
   const tooltipDot = ctr
     .append("circle")
     .attr("r", 5)
@@ -55,6 +63,7 @@ async function draw() {
     .range([dimensions.ctrHeight, 0])
     .nice();
 
+  // Line Generator
   const lineGenerator = d3
     .line()
     .x((d) => xScale(xAccessor(d)))
@@ -72,16 +81,17 @@ async function draw() {
   // Axes
   const yAxis = d3.axisLeft(yScale).tickFormat((d) => `$${d}`);
 
-  ctr.append("g").call(yAxis);
+  ctr.append("g").call(yAxis).classed("axis", true);
 
   const xAxis = d3.axisBottom(xScale);
 
   ctr
     .append("g")
     .call(xAxis)
-    .style("transform", `tranlateY(${dimensions.ctrHeight}px)`);
+    .classed("axis", true)
+    .style("transform", `translateY(${dimensions.ctrHeight}px)`);
 
-  // Draw Container Overlay
+  // Draw Chart Container Overlay
   ctr
     .append("rect")
     .style("opacity", 0)
@@ -96,21 +106,20 @@ async function draw() {
       const index = weatherBisect(data, date);
       const weather = data[index - 1];
 
-      // Update Image
+      // Update Tooltip Dot
       tooltipDot
         .style("opacity", 1)
         .attr("cx", xScale(xAccessor(weather)))
         .attr("cy", yScale(yAccessor(weather)))
         .raise();
 
+      // Update Tooltip
       tooltip
         .style("display", "block")
-        .style("top", `${yScale(yAccessor(weather)) - 20}px`)
-        .style("left", `${xScale(xAccessor(weather))}px`);
+        .style("top", `${yScale(yAccessor(weather)) - 45}px`)
+        .style("left", `${xScale(xAccessor(weather)) - 40}px`);
 
       tooltip.select(".price").text(`$${yAccessor(weather)}`);
-
-      const dateFormatter = d3.timeFormat("%B %-d, %Y");
 
       tooltip.select(".date").text(dateFormatter(xAccessor(weather)));
     })
