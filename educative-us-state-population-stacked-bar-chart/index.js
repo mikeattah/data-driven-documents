@@ -7,6 +7,7 @@ async function draw() {
     return d;
   });
 
+  // Sort Data by Total Population
   data.sort((a, b) => b.total - a.total);
 
   // Dimensions
@@ -19,7 +20,7 @@ async function draw() {
   dimensions.ctrWidth = dimensions.width - dimensions.margins * 2;
   dimensions.ctrHeight = dimensions.height - dimensions.margins * 2;
 
-  // Draw Image
+  // SVG Image
   const svg = d3
     .select("#chart")
     .append("svg")
@@ -27,6 +28,7 @@ async function draw() {
     // .attr("height", dimensions.height)
     .attr("viewBox", `0 0 ${dimensions.width} ${dimensions.height}`);
 
+  // Chart Container
   const ctr = svg
     .append("g")
     .attr(
