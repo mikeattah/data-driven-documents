@@ -1,23 +1,30 @@
 # Data Visualization with D3.js Projects
 
-This repo contains the projects I have completed while learning Data Visualization with D3.js. Check each folder above for each chart's code or click on the link below to view the associated GitHub Page
+This repo contains ongoing and/or completed projects related to learning Data Visualization with D3.js. Check each folder above for each chart's code or click on the link below to view the associated GitHub Page
 
 ## freeCodeCamp's Data Visualization Certification
 
 These projects were completed for freeCodeCamp's Data Visualization Certification Course:
 
-- [Visualize Data with a Bar Chart](https://mikeattah.github.io/data-driven-documents/educative-apple-stock-price-line-chart/)
-- [Visualize Data with a Scatterplot Graph](https://codepen.io/mikeattah/pen/WNObLjR)
-- [Visualize Data with a Heat Map](https://codepen.io/mikeattah/pen/gORpJZG)
-- [Visualize Data with a Choropleth Map](https://codepen.io/mikeattah/pen/KKqpjKJ)
-- [Visualize Data with a Treemap Diagram](https://codepen.io/mikeattah/pen/gORadeV)
-- [Visualize Tech Stack with a Treemap Diagram](https://codepen.io/mikeattah/pen/jOwqKYB)
+- [X](https://mikeattah.github.io/data-driven-documents/educative-apple-stock-price-line-chart/)
+- [X](https://codepen.io/mikeattah/pen/WNObLjR)
+- [X](https://codepen.io/mikeattah/pen/gORpJZG)
+- [X](https://codepen.io/mikeattah/pen/KKqpjKJ)
+- [X](https://codepen.io/mikeattah/pen/gORadeV)
 
 ## Educative's Master D3.js for Data Visualization Course
 
 These projects were completed during [Educative's D3.js Course](https://www.educative.io/courses/master-d3-data-visualization):
 
-- [Apple Stock Price - Line Chart](https://mikeattah.github.io/data-driven-documents/educative-apple-stock-price-line-chart/)
+[Scatterplot](./visualization-of-new-york-city-weather-data with-a-scatterplot.png)
+[Visualization of New York City Weather Data with a Scatterplot](https://mikeattah.github.io/data-driven-documents/educative-nyc-weather-scatterplot/)
+
+- [X](https://mikeattah.github.io/data-driven-documents/educative-nyc-weather-histogram/)
+- [X](https://mikeattah.github.io/data-driven-documents/educative-nyc-weather-histogram/)
+- [X](https://mikeattah.github.io/data-driven-documents/educative-nyc-weather-histogram/)
+- [X](https://mikeattah.github.io/data-driven-documents/educative-nyc-weather-histogram/)
+- [X](https://mikeattah.github.io/data-driven-documents/educative-nyc-weather-histogram/)
+- [X](https://mikeattah.github.io/data-driven-documents/educative-nyc-weather-histogram/)
 
 ## Toolbox
 

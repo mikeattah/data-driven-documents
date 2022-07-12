@@ -1,9 +1,9 @@
+// Source: https://www.educative.io/courses/master-d3-data-visualization
 async function draw() {
   // Data
-  const data = await d3.json("educative-nyc-weather-data-scatterplot.json");
+  const data = await d3.json("data.json");
 
   // Accessor Functions
-  // x/y humidity/apparentTemperature
   const xAccessor = (d) => d.currently.humidity;
   const yAccessor = (d) => d.currently.apparentTemperature;
 
@@ -11,36 +11,27 @@ async function draw() {
   let dimensions = {
     width: 800,
     height: 800,
-    margin: {
-      top: 50,
-      right: 50,
-      bottom: 50,
-      left: 50,
-    },
+    margins: 50,
   };
 
-  dimensions.ctrWidth =
-    dimensions.width - dimensions.margin.left - dimensions.margin.right;
-  dimensions.ctrHeight =
-    dimensions.height - dimensions.margin.top - dimensions.margin.bottom;
+  dimensions.ctrWidth = dimensions.width - dimensions.margins * 2;
+  dimensions.ctrHeight = dimensions.height - dimensions.margins * 2;
 
-  // Create SVG element and set the dimensions of the canvas
+  // SVG Image
   const svg = d3
     .select("#chart")
     .append("svg")
-    .attr("width", dimensions.width)
-    .attr("height", dimensions.height);
+    // .attr("width", dimensions.width)
+    // .attr("height", dimensions.height)
+    .attr("viewBox", `0 0 ${dimensions.width} ${dimensions.height}`);
 
-  // Create container for the chart
+  // Chart Container
   const ctr = svg
     .append("g")
     .attr(
       "transform",
-      `translate(${dimensions.margin.left}, ${dimensions.margin.top})`
+      `translate(${dimensions.margins}, ${dimensions.margins})`
     );
-
-  // Create tooltip
-  const tooltip = d3.select("#tooltip");
 
   // Scales
   const xScale = d3
@@ -56,7 +47,7 @@ async function draw() {
     .nice() // round domain to nearest whole number
     .clamp(true);
 
-  // Draw circles
+  // Circles
   ctr
     .selectAll("circle")
     .data(data)
@@ -66,6 +57,10 @@ async function draw() {
     .attr("data-temp", yAccessor)
     .attr("r", 5)
     .attr("fill", "red");
+
+  // Tooltip
+  const tooltip = d3.select("#tooltip");
+  const arrow = tooltip.append("div").classed("arrow", true);
 
   // Axes
   const xAxis = d3
@@ -82,7 +77,7 @@ async function draw() {
   xAxisGroup
     .append("text")
     .attr("x", dimensions.ctrWidth / 2)
-    .attr("y", dimensions.margin.bottom - 10)
+    .attr("y", dimensions.margins - 10)
     .attr("fill", "black")
     .text("Humidity")
     .style("text-anchor", "middle");
@@ -94,12 +89,13 @@ async function draw() {
   yAxisGroup
     .append("text")
     .attr("x", -dimensions.ctrHeight / 2)
-    .attr("y", -dimensions.margin.left + 15)
+    .attr("y", -dimensions.margins + 15)
     .attr("fill", "black")
     .html("Temperature (&deg;F)")
     .style("text-anchor", "middle")
     .style("transform", "rotate(270deg)");
 
+  // Voronoi Diagrams
   const delaunay = d3.Delaunay.from(
     data,
     (d) => xScale(xAccessor(d)),
@@ -110,7 +106,7 @@ async function draw() {
   voronoi.xmax = dimensions.ctrWidth;
   voronoi.ymax = dimensions.ctrHeight;
 
-  // Draw Partitions
+  // Voronoi Partitions
   ctr
     .append("g")
     .selectAll("path")
@@ -120,6 +116,7 @@ async function draw() {
     .attr("fill", "transparent")
     .attr("d", (d, i) => voronoi.renderCell(i))
     .on("mouseenter", function (e, datum) {
+      // Append Overlapping Circles
       ctr
         .append("circle")
         .classed("dot-hovered", true)
@@ -129,14 +126,15 @@ async function draw() {
         .attr("cy", yScale(yAccessor(datum)))
         .style("pointer-events", "none");
 
-      tooltip
-        .style("display", "block")
-        .style("top", yScale(yAccessor(datum)) - 25 + "px")
-        .style("left", xScale(xAccessor(datum)) + "px");
-
       // formatters
       const numberFormatter = d3.format(".2f");
       const dateFormatter = d3.timeFormat("%B %-d, %Y");
+
+      // Tooltip
+      tooltip
+        .style("display", "block")
+        .style("top", yScale(yAccessor(datum)) - 55 + "px")
+        .style("left", xScale(xAccessor(datum)) - 27 + "px");
 
       tooltip
         .select(".metric-humidity span")

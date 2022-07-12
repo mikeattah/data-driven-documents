@@ -12,7 +12,20 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: "Poppins", "Roboto", sans-serif;
   background-color: #483d8b;
+}
+
+#title-box {
+  width: 800px;
+  height: 75px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+  margin-top: 25px;
+  border-radius: 15px;
 }
 
 #chart {
@@ -20,23 +33,50 @@ body {
   height: 800px;
   background-color: #f7f7f7;
   margin: 25px auto;
+  border-radius: 15px;
   position: relative;
 }
 
 #tooltip {
+  width: 160px;
   text-align: center;
   border: 1px solid #ccc;
   position: absolute;
+  font-size: 14px;
   padding: 10px;
   background-color: #fff;
   display: none;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #ccc;
 }
 
 #tooltip .metric-date {
-  text-decoration: underline;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+
+#tooltip .metric-humidity,
+#tooltip .metric-temp {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .axis {
-  font-size: 18px;
+  font-size: 16px;
   shape-rendering: geometricPrecision;
+}
+
+.arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #ccc;
+  bottom: -10px;
+  left: 42%;
+  transform: rotate(180deg);
 }
