@@ -1,18 +1,20 @@
+// Source: https://www.educative.io/courses/master-d3-data-visualization
 async function draw() {
   // Data
-  const data = await d3.json("educative-milky-way-data-logscale.json");
+  const data = await d3.json("data.json");
 
+  // Accessor Functions
   const nameAccessor = (d) => d.name;
   const sizeAccessor = (d) => d.size;
 
   // Dimensions
   let dimensions = {
-    width: 200,
+    width: 250,
     height: 500,
     margin: 50,
   };
 
-  // Draw Image
+  // Create SVG Image
   const svg = d3
     .select("#chart")
     .append("svg")
@@ -50,6 +52,7 @@ async function draw() {
 
   // Draw Axis
   const axis = d3.axisLeft(universeScale);
+
   svg
     .append("g")
     .attr("transform", `translate(${dimensions.margin}, 0)`)
