@@ -44,8 +44,8 @@ These projects were completed during [Educative's Master D3.js Data Visualizatio
 6. View Live Site: [Visualization of Apple Stock Price Data with Line Chart](https://mikeattah.github.io/data-driven-documents/educative-apple-stock-price-line-chart/)
    ![Line Chart](public/visualization-of-apple-stock-price-data-with-line-chart.png)
 
-7. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/X/)
-   ![X](public/X.png)
+7. View Live Site: [Visualization of Milky Way Data with LogScale](https://mikeattah.github.io/data-driven-documents/educative-milky-way-logscale/)
+   ![LogScale](public/visualization-of-milky-way-data-with-logscale.png)
 
 ## Toolbox
 
