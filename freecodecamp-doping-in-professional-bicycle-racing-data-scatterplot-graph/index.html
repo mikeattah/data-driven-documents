@@ -5,115 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="freeCodeCamp Project - D3.js - Visualize Data with a Scatterplot Graph"
+      content="freeCodeCamp Project - D3.js - Visualization of Doping in Professional Bicycle Racing Data with a Scatterplot Graph"
     />
 
-    <title>Visualize Data with a Scatterplot Graph</title>
-
-    <!-- jQuery Library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-    <!-- D3.js Library -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <title>
+      Visualization of Doping in Professional Bicycle Racing Data with a
+      Scatterplot Graph
+    </title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Roboto:wght@400&family=Montserrat:wght@400&family=Prata:wght@400&family=Inter:wght@300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Roboto:wght@400&display=swap"
       rel="stylesheet"
     />
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="fcc-visualize-data-styles.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="container">
-      <h2 id="title">Doping in Professional Bicycle Racing</h2>
-      <p class="descriptions">35 Fastest times up Alpe d'Huez</p>
+
+    <div id="top-box">
+      <h1 id="title">Doping in Professional Bicycle Racing</h1>
+      <p class="sub-title">35 Fastest times up Alpe d'Huez</p>
     </div>
 
+    <div id="chart">
+      <div id="tooltip">
+        <p class="athlete-name"><span class="athlete-nationality"></span></p>
+        <div class="date">
+          <p>Year: <span class="date-year"></span></p>
+          <p>Time: <span class="date-time"></span></p>
+        </div>
+        <p class="description"></p>
+        <div class="arrow"></div>
+      </div>
+      <div id="legend">
+        <div class="no-doping"><span></span></div>
+        <div class="yes-doping"><span></span></div>
+      </div>
+    </div>
+
+    <!-- D3.js Library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- Custom Script -->
+    <script src="index.js"></script>
+
+    <!-- FCC Tests -->
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        d3.json(
-          "https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/cyclist-data.json"
-        ).then(function (data) {
-          // 'd' refers to each object in 'data'
-          // elements will always have a 3:2 width to height ratio
-          // no matter what the zoom level is
-          const width = 900,
-            height = 600,
-            margin = 50,
-            padding = 0.1,
-            specifier = "%M:%S",
-            minSec = d3.timeFormat("%M:%S"),
-            parsedData = data.map((d) => d3.timeParse(specifier)(d["Time"])),
-            maxX = d3.max(data, (d, i) => d["Year"]),
-            minX = d3.min(data, (d, i) => d["Year"]),
-            maxY = d3.max(parsedData),
-            minY = d3.min(parsedData),
-            xScale = d3.scaleLinear().domain([1993, maxX]).range([0, width]),
-            yScale = d3.scaleTime().domain(maxY, minY).range([height, 0]);
-
-          // console.log(
-          //   data,
-          //   data.length,
-          //   maxX,
-          //   minX,
-          //   minSec(maxY),
-          //   minSec(minY)
-          // );
-
-          const svg = d3
-            .select("#container")
-            .append("svg")
-            .attr("viewBox", [0, 0, width + 2 * margin, height + 2 * margin])
-            .attr("class", "canvas");
-
-          svg
-            .selectAll("circle")
-            .data(data)
-            .join("circle")
-            .attr("class", "dot")
-            .attr("cx", (d, i) => xScale(d["Year"]))
-            .attr("cy", (d, i) => yScale(d["Time"]))
-            .attr("r", 6)
-            .attr("fill", (d, i) => {
-              if (d["Doping"] !== "") return "#0070f3";
-              else return "orange";
-            });
-
-          const xAxis = d3
-              .axisBottom()
-              .scale(xScale)
-              .tickFormat(d3.format("d")),
-            yAxis = d3
-              .axisLeft()
-              .scale(yScale)
-              .tickValues(parsedData)
-              .tickFormat((d) => minSec(d));
-
-          svg
-            .append("g")
-            .attr(
-              "transform",
-              (d, i) => "translate(" + margin + ", " + height + ")"
-            )
-            .attr("id", "x-axis")
-            .call(xAxis);
-
-          svg
-            .append("g")
-            .attr(
-              "transform",
-              (d, i) => "translate(" + margin + ", " + "0" + ")"
-            )
-            .attr("id", "y-axis")
-            .call(yAxis);
-        });
-      });
-    </script>
   </body>
 </html>

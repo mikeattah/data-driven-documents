@@ -12,107 +12,103 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: "Poppins", "Roboto", sans-serif;
   background-color: #483d8b;
 }
 
-a {
-  text-decoration: none;
-}
-
-span {
-  color: black;
-  font-weight: bolder;
-}
-
-#container {
-  height: min-content;
-  width: min-content;
+#top-box {
+  height: 75px;
+  width: 800px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
-  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
-}
-
-.chart {
-}
-
-.nav_bar {
-  height: 5%;
-  width: min-content;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-#chart {
-  height: 90%;
-  width: 70%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-color: #f7f7f7;
+  text-align: center;
+  margin-top: 25px;
+  border-radius: 15px;
 }
 
 #title {
-  width: 100%;
-  text-align: center;
-  font-family: Roboto, Montserrat, sans-serif;
-  font-size: 1.5rem;
+  font-size: 24px;
+  margin-bottom: 3px;
 }
 
-.descriptions {
-  text-align: center;
-  font-family: Roboto, Montserrat, sans-serif;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+.sub-title {
+  font-size: 20px;
 }
 
-#legend {
-  height: 45%;
-  width: 20%;
-  background-color: white;
-  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.8);
-}
-
-.canvas {
-  border: 1px solid black;
-  color: black;
-}
-
-.x-axis {
-}
-
-.y-axis {
-}
-
-.tick {
-}
-
-.bar {
-  fill: #0070f3;
-}
-
-.bar:hover {
-  fill: whitesmoke;
+#chart {
+  width: 800px;
+  height: 800px;
+  background-color: #f7f7f7;
+  margin: 25px auto;
+  border-radius: 15px;
+  position: relative;
 }
 
 #tooltip {
-  position: "absolute";
-  padding: "4px";
-  background: "#fff";
-  border: "1px solid #000";
-  color: "#000";
-  opacity: 0.8;
+  width: 160px;
+  display: none;
+  position: absolute;
+  font-size: 14px;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #ccc;
 }
 
-.text {
-  box-shadow: 0 0 5px 5px red;
+#tooltip .athlete {
+  font-weight: bold;
+}
+
+#tooltip .date {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 5px;
+}
+
+#tooltip .description {
+}
+
+#tooltip .arrow {
+  height: 0;
+  width: 0;
+  position: absolute;
+  bottom: -10px;
+  left: 42%;
+  transform: rotate(180deg);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #ccc;
+}
+
+#legend {
+}
+
+#legend .no-doping {
+}
+
+#legend .yes-doping {
+}
+
+#x-axis {
+}
+
+#y-axis {
+}
+
+.axis {
+  font-size: 11px;
+  shape-rendering: geometricPrecision;
 }
 
 .dot {
-  stroke: black;
-  stroke-width: 1px;
+}
+
+.dot-hovered {
 }
