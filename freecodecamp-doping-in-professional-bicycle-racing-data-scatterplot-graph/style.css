@@ -13,12 +13,12 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Poppins", "Roboto", sans-serif;
-  background-color: #483d8b;
+  background-color: rgba(72, 61, 139, 0.5);
 }
 
 #top-box {
   height: 75px;
-  width: 800px;
+  width: 1000px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,35 +39,44 @@ body {
 }
 
 #chart {
-  width: 800px;
+  width: 1000px;
   height: 800px;
+  position: relative;
   background-color: #f7f7f7;
   margin: 25px auto;
   border-radius: 15px;
-  position: relative;
 }
 
 #tooltip {
-  width: 160px;
+  height: 125px;
+  width: 225px;
   display: none;
   position: absolute;
   font-size: 14px;
-  background-color: #fff;
+  background-color: #483d8b;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #483d8b;
   border-radius: 5px;
-  box-shadow: 0px 0px 5px #ccc;
 }
 
 #tooltip .athlete {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
   font-weight: bold;
+}
+
+.athlete-name,
+.date-year {
+  margin-right: 7px;
 }
 
 #tooltip .date {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   padding-bottom: 5px;
 }
@@ -80,20 +89,44 @@ body {
   width: 0;
   position: absolute;
   bottom: -10px;
-  left: 42%;
+  left: 45%;
   transform: rotate(180deg);
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid #ccc;
+  border-bottom: 10px solid #483d8b;
 }
 
 #legend {
+  width: 250px;
+  height: 50px;
+  position: absolute;
+  top: 350px;
+  right: 50px;
+  font-size: 10px;
 }
 
-#legend .no-doping {
+#legend .legend-item {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 2px;
 }
 
-#legend .yes-doping {
+.no-doping,
+.yes-doping {
+  height: 18px;
+  width: 18px;
+  margin-left: 5px;
+}
+
+.no-doping {
+  background-color: #ff7f0e;
+}
+
+.yes-doping {
+  background-color: #2463a5;
 }
 
 #x-axis {
@@ -108,7 +141,4 @@ body {
 }
 
 .dot {
-}
-
-.dot-hovered {
 }

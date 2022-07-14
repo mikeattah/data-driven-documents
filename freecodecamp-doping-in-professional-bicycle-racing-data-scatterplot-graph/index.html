@@ -34,7 +34,10 @@
 
     <div id="chart">
       <div id="tooltip">
-        <p class="athlete-name"><span class="athlete-nationality"></span></p>
+        <div class="athlete">
+          <span class="athlete-name"></span>
+          <span class="athlete-nationality"></span>
+        </div>
         <div class="date">
           <p>Year: <span class="date-year"></span></p>
           <p>Time: <span class="date-time"></span></p>
@@ -43,8 +46,14 @@
         <div class="arrow"></div>
       </div>
       <div id="legend">
-        <div class="no-doping"><span></span></div>
-        <div class="yes-doping"><span></span></div>
+        <div class="legend-item">
+          <span>No doping allegations</span>
+          <div class="no-doping"></div>
+        </div>
+        <div class="legend-item">
+          <span>Riders with doping allegations</span>
+          <div class="yes-doping"></div>
+        </div>
       </div>
     </div>
 
