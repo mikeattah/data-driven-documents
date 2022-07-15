@@ -6,11 +6,11 @@ async function draw() {
   const parseDate = d3.timeParse("%Y-%m-%d");
 
   // Format Date
-  const dateFormatter = d3.timeFormat("%B %-d, %Y");
+  const dateFormatter = d3.timeFormat("%B %d, %Y");
 
   // Accessor Functions
-  const dateAccessor = (d) => parseDate(d[0]);
-  const gdpAccessor = (d) => d[1];
+  const xAccessor = (d) => parseDate(d[0]);
+  const yAccessor = (d) => d[1];
 
   // Dimensions
   let dimensions = {
@@ -42,13 +42,13 @@ async function draw() {
 
   // Scales
   const xScale = d3
-    .scaleLinear()
-    .domain(d3.extent(data, dateAccessor))
+    .scaleUtc()
+    .domain(d3.extent(data, xAccessor))
     .range([0, dimensions.ctrWidth]);
 
   const yScale = d3
     .scaleLinear()
-    .domain(d3.extent(data, gdpAccessor))
+    .domain(d3.extent(data, yAccessor))
     .range([dimensions.ctrHeight, 0])
     .nice();
 
@@ -58,18 +58,22 @@ async function draw() {
     .data(data)
     .join("rect")
     .attr("width", dimensions.barWidth)
-    .attr("height", (d) => dimensions.ctrHeight - yScale(gdpAccessor(d)))
-    .attr("x", (d) => xScale(dateAccessor(d)))
-    .attr("y", (d) => yScale(gdpAccessor(d)))
-    .attr("fill", "#01c5c4")
+    .attr("height", (d) => dimensions.ctrHeight - yScale(yAccessor(d)))
+    .attr("x", (d) => xScale(xAccessor(d)))
+    .attr("y", (d) => yScale(yAccessor(d)))
+    .attr("data-date", (d) => dateFormatter(xAccessor(d)))
+    .attr("data-gdp", (d) => yAccessor(d))
+    .attr("fill", "#1ca8f8")
+    .classed("bar", true)
     .on("touchmouse mouseenter", function (e, datum) {
-        const bar = d3.select(this);
-        bar.attr("opacity", 0.5)
+      d3.select(this).attr("fill", "#c4d9eb");
       // Tooltip
       tooltip
         .style("display", "block")
-        .style("top", `${e.pageY - 300}px`)
-        .style("left", xScale(dateAccessor(datum)) + "px");
+        .style("top", `${e.pageY git add .- 300}px`)
+        .style("left", xScale(xAccessor(datum)) + "px");
+
+      // tooltip.append("g").attr("data-date", (d) => dateFormatter(xAccessor(d)));
 
       tooltip.select(".date-year").text("Year");
       tooltip.select(".date-qtr").text("Quarter");
@@ -77,6 +81,7 @@ async function draw() {
       tooltip.select(".amount-type").text("Type");
     })
     .on("mouseleave", function () {
+      d3.select(this).attr("fill", "#1ca8f8");
       tooltip.style("display", "none");
     });
 
@@ -86,10 +91,12 @@ async function draw() {
 
   ctr
     .append("g")
+    .attr("id", "x-axis")
+    .classed("tick", true)
     .attr("transform", `translate(0, ${dimensions.ctrHeight})`)
     .call(xAxis);
 
-  ctr.append("g").call(yAxis);
+  ctr.append("g").attr("id", "y-axis").classed("tick", true).call(yAxis);
 }
 
 draw();

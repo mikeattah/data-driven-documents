@@ -53,9 +53,9 @@ body {
   display: none;
   position: absolute;
   font-size: 14px;
-  background-color: #483d8b;
+  background-color: #a4b4d2;
   padding: 10px;
-  border: 1px solid #483d8b;
+  border: 1px solid #a4b4d2;
   border-radius: 5px;
 }
 
@@ -87,7 +87,7 @@ body {
   transform: rotate(180deg);
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid #483d8b;
+  border-bottom: 10px solid #a4b4d2;
 }
 
 #x-axis {
