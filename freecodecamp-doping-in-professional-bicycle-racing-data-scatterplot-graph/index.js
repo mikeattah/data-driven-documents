@@ -15,9 +15,9 @@ async function draw() {
 
   // Dimensions
   let dimensions = {
-    width: 1000,
-    height: 800,
-    margins: 50,
+    width: 1100,
+    height: 900,
+    margins: 75,
   };
 
   dimensions.ctrWidth = dimensions.width - dimensions.margins * 2;
@@ -71,8 +71,8 @@ async function draw() {
       // Tooltip
       tooltip
         .style("display", "block")
-        .style("top", yScale(yAccessor(datum)) - 95 + "px")
-        .style("left", xScale(xAccessor(datum)) - 62 + "px");
+        .style("top", yScale(yAccessor(datum)) - 70 + "px")
+        .style("left", xScale(xAccessor(datum)) - 38 + "px");
 
       tooltip.select(".athlete-name").text(nameAccessor(datum) + ": ");
       tooltip.select(".athlete-nationality").text(nationalityAccessor(datum));
@@ -95,7 +95,7 @@ async function draw() {
     .attr("id", "x-axis")
     .classed("axis", true);
 
-  const yAxis = d3.axisLeft(yScale);
+  const yAxis = d3.axisLeft(yScale).tickFormat(d3.timeFormat("%M:%S"));
 
   const yAxisGroup = ctr
     .append("g")
@@ -105,10 +105,12 @@ async function draw() {
 
   yAxisGroup
     .append("text")
-    .attr("x", -dimensions.ctrHeight / 2)
-    .attr("y", -dimensions.margins + 20)
+    .attr("x", -dimensions.margins * 1.6)
+    .attr("y", -dimensions.margins + 25)
     .attr("fill", "black")
     .html("Time in Minutes")
+    .style("font-weight", "bold")
+    .style("font-size", "2.0em")
     .style("text-anchor", "middle")
     .style("transform", "rotate(270deg)");
 }

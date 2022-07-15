@@ -13,12 +13,12 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Poppins", "Roboto", sans-serif;
-  background-color: rgba(72, 61, 139, 0.5);
+  background-color: #ccc;
 }
 
 #top-box {
   height: 75px;
-  width: 1000px;
+  width: 1100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,8 +39,8 @@ body {
 }
 
 #chart {
-  width: 1000px;
-  height: 800px;
+  width: 1100px;
+  height: 900px;
   position: relative;
   background-color: #f7f7f7;
   margin: 25px auto;
