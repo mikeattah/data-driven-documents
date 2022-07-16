@@ -6,11 +6,11 @@ This repo contains ongoing and/or completed projects related to learning Data Vi
 
 These projects were completed for [freeCodeCamp's Data Visualization Certification Course](https://www.freecodecamp.org/learn/data-visualization/):
 
-1. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/X/)
-   ![X](public/X.png)
+1. View Live Site: [Visualization of US GDP Data with a Bar Chart](https://mikeattah.github.io/data-driven-documents/freecodecamp-us-gdp-data-bar-chart/)
+   ![Bar Chart](public/X.png)
 
-2. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/X/)
-   ![X](public/X.png)
+2. View Live Site: [Visualization of Doping in Professional Bicycle Racing Data with a Scatterplot Graph](https://mikeattah.github.io/data-driven-documents/freecodecamp-doping-in-professional-bicycle-racing-data-scatterplot-graph/)
+   ![Scatterplot Graph](public/X.png)
 
 3. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/X/)
    ![X](public/X.png)

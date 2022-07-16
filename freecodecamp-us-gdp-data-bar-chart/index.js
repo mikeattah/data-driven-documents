@@ -7,6 +7,8 @@ async function draw() {
 
   // Format Date
   const dateFormatter = d3.timeFormat("%B %d, %Y");
+  const yearFormatter = d3.timeFormat("%Y");
+  const monthFormatter = d3.timeFormat("%B");
 
   // Accessor Functions
   const xAccessor = (d) => parseDate(d[0]);
@@ -67,18 +69,40 @@ async function draw() {
     .classed("bar", true)
     .on("touchmouse mouseenter", function (e, datum) {
       d3.select(this).attr("fill", "#c4d9eb");
+
+      const month = monthFormatter(xAccessor(datum));
+      let qtr = "";
+      switch (month) {
+        case "January":
+          qtr = "Q1";
+          break;
+        case "April":
+          qtr = "Q2";
+          break;
+        case "July":
+          qtr = "Q3";
+          break;
+        case "October":
+          qtr = "Q4";
+          break;
+        default:
+          qtr = "";
+      }
+
       // Tooltip
       tooltip
         .style("display", "block")
-        .style("top", `${e.pageY git add .- 300}px`)
+        .style("top", `${e.pageY - 225}px`)
         .style("left", xScale(xAccessor(datum)) + "px");
 
       // tooltip.append("g").attr("data-date", (d) => dateFormatter(xAccessor(d)));
 
-      tooltip.select(".date-year").text("Year");
-      tooltip.select(".date-qtr").text("Quarter");
-      tooltip.select(".amount-figure").text("Figure");
-      tooltip.select(".amount-type").text("Type");
+      tooltip.select(".date-year").text(yearFormatter(xAccessor(datum)));
+      tooltip.select(".date-qtr").text(qtr);
+      tooltip
+        .select(".amount-figure")
+        .text("$" + yAccessor(datum).toLocaleString());
+      tooltip.select(".amount-type").text("Billion");
     })
     .on("mouseleave", function () {
       d3.select(this).attr("fill", "#1ca8f8");
@@ -87,16 +111,41 @@ async function draw() {
 
   // Draw Axes
   const xAxis = d3.axisBottom(xScale);
-  const yAxis = d3.axisLeft(yScale);
-
-  ctr
+  const xAxisGroup = ctr
     .append("g")
     .attr("id", "x-axis")
     .classed("tick", true)
-    .attr("transform", `translate(0, ${dimensions.ctrHeight})`)
-    .call(xAxis);
+    .attr("transform", `translate(0, ${dimensions.ctrHeight})`);
+  xAxisGroup
+    .append("text")
+    .attr(
+      "transform",
+      `translate(${dimensions.ctrWidth - 200}, ${dimensions.margins - 35})`
+    )
+    .attr("stroke", "black")
+    .attr("fill", "black")
+    .style("font-size", "14px")
+    .style("text-anchor", "middle")
+    .style("font-weight", "100")
+    .text("More Information: http://www.bea.gov/national/pdf/nipaguid.pdf");
+  xAxisGroup.call(xAxis);
 
-  ctr.append("g").attr("id", "y-axis").classed("tick", true).call(yAxis);
+  const yAxis = d3.axisLeft(yScale);
+  const yAxisGroup = ctr.append("g").attr("id", "y-axis").classed("tick", true);
+  yAxisGroup
+    .append("text")
+    .attr(
+      "transform",
+      `translate(${dimensions.margins - 35}, ${dimensions.margins + 2000})`
+    )
+    .attr("transform", "rotate(-90)")
+    .attr("stroke", "black")
+    .attr("fill", "black")
+    .style("font-size", "18px")
+    .style("text-anchor", "middle")
+    .style("font-weight", "100")
+    .text("Gross Domestic Product");
+  yAxisGroup.call(yAxis);
 }
 
 draw();
