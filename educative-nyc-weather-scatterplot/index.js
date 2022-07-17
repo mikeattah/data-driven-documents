@@ -150,7 +150,6 @@ async function draw() {
     })
     .on("mouseleave", function () {
       d3.select(".dot-hovered").remove();
-
       tooltip.style("display", "none");
     });
 }

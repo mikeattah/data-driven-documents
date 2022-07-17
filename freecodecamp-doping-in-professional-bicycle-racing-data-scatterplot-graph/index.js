@@ -71,7 +71,7 @@ async function draw() {
       // Tooltip
       tooltip
         .style("display", "block")
-        .style("top", yScale(yAccessor(datum)) - 70 + "px")
+        .style("top", `${e.pageY - 275}px`)
         .style("left", xScale(xAccessor(datum)) - 38 + "px");
 
       tooltip.select(".athlete-name").text(nameAccessor(datum) + ": ");

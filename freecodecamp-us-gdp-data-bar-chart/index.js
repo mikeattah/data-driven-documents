@@ -63,7 +63,7 @@ async function draw() {
     .attr("height", (d) => dimensions.ctrHeight - yScale(yAccessor(d)))
     .attr("x", (d) => xScale(xAccessor(d)))
     .attr("y", (d) => yScale(yAccessor(d)))
-    .attr("data-date", (d) => dateFormatter(xAccessor(d)))
+    .attr("data-date", (d) => d[0])
     .attr("data-gdp", (d) => yAccessor(d))
     .attr("fill", "#1ca8f8")
     .classed("bar", true)
@@ -91,11 +91,10 @@ async function draw() {
 
       // Tooltip
       tooltip
+        .attr("data-date", datum[0])
         .style("display", "block")
         .style("top", `${e.pageY - 225}px`)
         .style("left", xScale(xAccessor(datum)) + "px");
-
-      // tooltip.append("g").attr("data-date", (d) => dateFormatter(xAccessor(d)));
 
       tooltip.select(".date-year").text(yearFormatter(xAccessor(datum)));
       tooltip.select(".date-qtr").text(qtr);
@@ -120,13 +119,14 @@ async function draw() {
     .append("text")
     .attr(
       "transform",
-      `translate(${dimensions.ctrWidth - 200}, ${dimensions.margins - 35})`
+      `translate(${dimensions.ctrWidth - 185}, ${dimensions.margins - 35})`
     )
     .attr("stroke", "black")
     .attr("fill", "black")
-    .style("font-size", "14px")
     .style("text-anchor", "middle")
-    .style("font-weight", "100")
+    .style("font-size", "14px")
+    .style("font-family", "'Lato', sans-serif")
+    .style("font-weight", "lighter")
     .text("More Information: http://www.bea.gov/national/pdf/nipaguid.pdf");
   xAxisGroup.call(xAxis);
 
@@ -136,14 +136,15 @@ async function draw() {
     .append("text")
     .attr(
       "transform",
-      `translate(${dimensions.margins - 35}, ${dimensions.margins + 2000})`
+      `translate(${dimensions.margins * 1.5}, ${dimensions.margins * 2})`
     )
-    .attr("transform", "rotate(-90)")
     .attr("stroke", "black")
     .attr("fill", "black")
-    .style("font-size", "18px")
+    // .attr("transform", "rotate(270deg)")
     .style("text-anchor", "middle")
-    .style("font-weight", "100")
+    .style("font-size", "22px")
+    .style("font-family", "'Lato', sans-serif")
+    .style("font-weight", "lighter")
     .text("Gross Domestic Product");
   yAxisGroup.call(yAxis);
 }
