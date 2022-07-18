@@ -57,6 +57,7 @@ body {
   padding: 10px;
   border: 1px solid #a4b4d2;
   border-radius: 5px;
+  box-shadow: 0px 0px 12px #7f00ff;
 }
 
 .date,
@@ -104,13 +105,28 @@ body {
   border-bottom: 10px solid #a4b4d2;
 }
 
-#x-axis {
-}
-
-#y-axis {
-}
-
 .axis {
   font-size: 11px;
   shape-rendering: geometricPrecision;
+}
+
+.desc-x {
+  position: absolute;
+  top: 850px;
+  right: 70px;
+  font-size: 14px;
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+  text-anchor: middle;
+}
+
+.desc-y {
+  position: absolute;
+  top: 180px;
+  left: -25px;
+  transform: rotate(-90deg);
+  font-size: 22px;
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+  text-anchor: middle;
 }

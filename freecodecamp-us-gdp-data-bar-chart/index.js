@@ -6,7 +6,6 @@ async function draw() {
   const parseDate = d3.timeParse("%Y-%m-%d");
 
   // Format Date
-  const dateFormatter = d3.timeFormat("%B %d, %Y");
   const yearFormatter = d3.timeFormat("%Y");
   const monthFormatter = d3.timeFormat("%B");
 
@@ -115,37 +114,10 @@ async function draw() {
     .attr("id", "x-axis")
     .classed("tick", true)
     .attr("transform", `translate(0, ${dimensions.ctrHeight})`);
-  xAxisGroup
-    .append("text")
-    .attr(
-      "transform",
-      `translate(${dimensions.ctrWidth - 185}, ${dimensions.margins - 35})`
-    )
-    .attr("stroke", "black")
-    .attr("fill", "black")
-    .style("text-anchor", "middle")
-    .style("font-size", "14px")
-    .style("font-family", "'Lato', sans-serif")
-    .style("font-weight", "lighter")
-    .text("More Information: http://www.bea.gov/national/pdf/nipaguid.pdf");
   xAxisGroup.call(xAxis);
 
   const yAxis = d3.axisLeft(yScale);
   const yAxisGroup = ctr.append("g").attr("id", "y-axis").classed("tick", true);
-  yAxisGroup
-    .append("text")
-    .attr(
-      "transform",
-      `translate(${dimensions.margins * 1.5}, ${dimensions.margins * 2})`
-    )
-    .attr("stroke", "black")
-    .attr("fill", "black")
-    // .attr("transform", "rotate(270deg)")
-    .style("text-anchor", "middle")
-    .style("font-size", "22px")
-    .style("font-family", "'Lato', sans-serif")
-    .style("font-weight", "lighter")
-    .text("Gross Domestic Product");
   yAxisGroup.call(yAxis);
 }
 
