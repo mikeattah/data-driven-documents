@@ -2,15 +2,15 @@
 
 This repo contains ongoing and/or completed projects related to learning Data Visualization with D3.js. Check each folder above for each chart's code or click on the links below to view the associated GitHub Page
 
-## freeCodeCamp's Data Visualization Certification
+## FreeCodeCamp's Data Visualization Certification
 
 These projects were completed for [freeCodeCamp's Data Visualization Certification Course](https://www.freecodecamp.org/learn/data-visualization/):
 
 1. View Live Site: [Visualization of US GDP Data with a Bar Chart](https://mikeattah.github.io/data-driven-documents/freecodecamp-us-gdp-data-bar-chart/)
-   ![Bar Chart](public/X.png)
+   ![Bar Chart](public/visualization-of-us-gdp-data-with-a-bar-chart.png)
 
 2. View Live Site: [Visualization of Doping in Professional Bicycle Racing Data with a Scatterplot Graph](https://mikeattah.github.io/data-driven-documents/freecodecamp-doping-in-professional-bicycle-racing-data-scatterplot-graph/)
-   ![Scatterplot Graph](public/X.png)
+   ![Scatterplot Graph](public/visualization-of-doping-in-professional-bicycle-racing-data-with-a-scatterplot-graph.png)
 
 3. View Live Site: [X](https://mikeattah.github.io/data-driven-documents/X/)
    ![X](public/X.png)

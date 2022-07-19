@@ -5,106 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="freeCodeCamp Project - D3.js - Visualize Data with a Heat Map"
+      content="freeCodeCamp Project - D3.js - Visualization of Monthly Global Land Surface Temperature Data with a Heatmap"
     />
 
-    <title>Visualize Data with a Heat Map</title>
-
-    <!-- jQuery Library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-    <!-- D3.js Library -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <title>
+      Visualization of Monthly Global Land Surface Temperature Data with a
+      Heatmap
+    </title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Roboto:wght@400&family=Montserrat:wght@400&family=Prata:wght@400&family=Inter:wght@300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Roboto:wght@400&display=swap"
       rel="stylesheet"
     />
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="fcc-visualize-data-styles.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="container">
-      <h2 id="title">Monthly Global Land-Surface Temperature</h2>
-      <p class="descriptions">1753 - 2015: base temperature 8.66℃</p>
+
+    <div id="top-box">
+      <h1 id="title">Monthly Global Land-Surface Temperature</h1>
+      <p id="description">1753 - 2015: base temperature 8.66℃</p>
     </div>
 
+    <div id="scale">
+      <select id="metric" title="Toggle horizontal metric">
+        <option value="linear" selected>Linear</option>
+        <option value="quantize">Quantize</option>
+        <option value="quantile">Quantile</option>
+      </select>
+    </div>
+
+    <div id="chart">
+      <div id="tooltip">
+        <p class="year-month"></p>
+        <p class="temp"></p>
+        <p class="change"></p>
+      </div>
+      <div class="legend"></div>
+    </div>
+
+    <!-- D3.js Library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- Custom Script -->
+    <script src="index.js"></script>
+
+    <!-- FCC Tests -->
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const url =
-            "https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/global-temperature.json",
-          req = new XMLHttpRequest();
-
-        req.open("GET", url, true);
-        req.send();
-        req.onload = function () {
-          // elements will always have a 2:1 width to height ratio
-          // no matter what the zoom level is
-          const width = 900,
-            height = 600,
-            margin = 50,
-            padding = 0.1,
-            json = req.responseText,
-            data = JSON.parse(json),
-            maxX = d3.max(data, (obj, i) => obj["Year"]),
-            minX = d3.min(data, (obj, i) => obj["Year"]),
-            maxY = d3.max(
-              data,
-              (obj, i) => obj["Time"].slice(0, 2) + "." + obj["Time"].slice(3)
-            ),
-            minY = d3.min(
-              data,
-              (obj, i) => obj["Time"].slice(0, 2) + "." + obj["Time"].slice(3)
-            ),
-            xScale = d3
-              .scaleLinear()
-              .domain([minX, maxX])
-              .range([margin, width - margin]),
-            yScale = d3
-              .scaleLinear()
-              .domain([minY, maxY])
-              .range([height - margin, margin]);
-
-          // console.log(data, data.length, maxX, minX, maxY, minY);
-
-          const svg = d3
-            .select("#container")
-            .append("svg")
-            .attr("viewBox", [0, 0, width + 2 * margin, height + 2 * margin])
-            .attr("class", "canvas");
-
-          svg
-            .selectAll("circle")
-            .data(data)
-            .join("circle")
-            .attr("class", "circles")
-            .attr("cx", (obj, i) => xScale(obj["Year"]))
-            .attr(
-              "cy",
-              (obj, i) =>
-                height -
-                yScale(obj["Time"].slice(0, 2) + "." + obj["Time"].slice(3))
-            )
-            .attr("r", 6)
-            .attr("fill", (obj, i) => {
-              if (obj["Doping"] !== "") return "#0070f3";
-              else return "orange";
-            });
-          // .append("text")
-          //   .attr("class", "text")
-          // .text();
-
-          svg.append("g").attr("id", "x-axis");
-
-          svg.append("g").attr("id", "y-axis");
-        };
-      });
-    </script>
   </body>
 </html>

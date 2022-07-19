@@ -116,7 +116,7 @@ body {
   right: 70px;
   font-size: 14px;
   font-family: "Lato", sans-serif;
-  font-weight: normal;
+  font-weight: bold;
   text-anchor: middle;
 }
 
@@ -127,6 +127,6 @@ body {
   transform: rotate(-90deg);
   font-size: 22px;
   font-family: "Lato", sans-serif;
-  font-weight: normal;
+  font-weight: bold;
   text-anchor: middle;
 }

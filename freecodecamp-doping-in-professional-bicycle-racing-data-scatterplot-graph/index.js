@@ -7,7 +7,7 @@ async function draw() {
 
   // Accessor Functions
   const xAccessor = (d) => d.Year;
-  const yAccessor = (d) => d.Seconds; // problem area
+  const yAccessor = (d) => d.Seconds;
   const timeAccessor = (d) => d.Time;
   const nameAccessor = (d) => d.Name;
   const nationalityAccessor = (d) => d.Nationality;
@@ -61,15 +61,16 @@ async function draw() {
     .attr("r", 6)
     .attr("cx", (d) => xScale(xAccessor(d)))
     .attr("cy", (d) => yScale(yAccessor(d)))
-    .attr("data-xvalue", xAccessor)
-    .attr("data-yvalue", yAccessor)
-    .classed("dot", true)
+    .attr("data-xvalue", (d) => xAccessor(d))
+    .attr("data-yvalue", (d) => timeAccessor(d))
     .attr("fill", (d) => (dopingAccessor(d) === "" ? "#ff7f0e" : "#2463a5"))
     .attr("stroke", "black")
     .attr("stroke-width", "1px")
-    .on("mouseenter", function (e, datum) {
+    .classed("dot", true)
+    .on("touchmouse mouseenter", function (e, datum) {
       // Tooltip
       tooltip
+        .attr("data-year", datum.Year)
         .style("display", "block")
         .style("top", `${e.pageY - 275}px`)
         .style("left", xScale(xAccessor(datum)) - 38 + "px");
@@ -86,33 +87,27 @@ async function draw() {
     });
 
   // Axes
-  const xAxis = d3.axisBottom(xScale).tickFormat(d3.format("d"));
-
+  const xAxis = d3.axisBottom(xScale).ticks(12).tickFormat(d3.format("d"));
   const xAxisGroup = ctr
     .append("g")
-    .call(xAxis)
-    .style("transform", `translateY(${dimensions.ctrHeight}px)`)
     .attr("id", "x-axis")
+    .style("transform", `translateY(${dimensions.ctrHeight}px)`)
     .classed("axis", true);
+  xAxisGroup.call(xAxis);
 
-  const yAxis = d3.axisLeft(yScale).tickFormat(d3.timeFormat("%M:%S"));
-
-  const yAxisGroup = ctr
-    .append("g")
-    .call(yAxis)
-    .attr("id", "y-axis")
-    .classed("axis", true);
-
+  const yAxis = d3.axisLeft(yScale).tickFormat((d) => timeFormatter(d * 1000));
+  const yAxisGroup = ctr.append("g").attr("id", "y-axis").classed("axis", true);
   yAxisGroup
     .append("text")
     .attr("x", -dimensions.margins * 1.6)
     .attr("y", -dimensions.margins + 25)
     .attr("fill", "black")
-    .html("Time in Minutes")
     .style("font-weight", "bold")
     .style("font-size", "2.0em")
     .style("text-anchor", "middle")
-    .style("transform", "rotate(270deg)");
+    .style("transform", "rotate(270deg)")
+    .html("Time in Minutes");
+  yAxisGroup.call(yAxis);
 }
 
 draw();
