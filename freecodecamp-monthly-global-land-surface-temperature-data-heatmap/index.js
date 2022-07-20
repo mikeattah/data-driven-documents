@@ -1,6 +1,6 @@
 async function draw() {
   // Data
-  const data = await d3.json("data.json");
+  const data = await d3.json("data.json"); 
 
   // Dimensions
   let dimensions = {

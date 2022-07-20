@@ -27,7 +27,7 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
 
-    <div id="top-box">
+    <div id="title-box">
       <h1 id="title">Monthly Global Land-Surface Temperature</h1>
       <p id="description">1753 - 2015: base temperature 8.66℃</p>
     </div>
@@ -42,11 +42,12 @@
 
     <div id="chart">
       <div id="tooltip">
-        <p class="year-month"></p>
-        <p class="temp"></p>
-        <p class="change"></p>
+        <p class="tooltip-text"></p>
+        <p class="tooltip-text"></p>
+        <p class="tooltip-text"></p>
+        <div class="tooltip-arrow"></div>
       </div>
-      <div class="legend"></div>
+      <div id="legend"></div>
     </div>
 
     <!-- D3.js Library -->
