@@ -3,16 +3,17 @@ async function draw() {
   const data = await d3.json("data.json");
 
   // Formatters
-  const timeFormatter = d3.timeFormat("%M:%S");
-  const parseTime = d3.timeParse("%M:%S");
+  const timeFormatter = d3.timeFormat("%M:%S"),
+    parseTime = d3.timeParse("%M:%S");
 
   // Accessor Functions
-  const xAccessor = (d) => d.Year;
-  const yAccessor = (d) => d.Seconds;
-  const timeAccessor = (d) => d.Time;
-  const nameAccessor = (d) => d.Name;
-  const nationalityAccessor = (d) => d.Nationality;
-  const dopingAccessor = (d) => d.Doping;
+  const xAccessor = (d) => d.Year,
+    yAccessor = (d) => d.Seconds,
+    timeAccessor = (d) => d.Time,
+    nameAccessor = (d) => d.Name,
+    nationalityAccessor = (d) => d.Nationality,
+    dopingAccessor = (d) => d.Doping,
+    parsedTimeAccessor = (d) => parseTime(d.Time);
 
   // Dimensions
   let dimensions = {
@@ -63,7 +64,7 @@ async function draw() {
     .attr("cx", (d) => xScale(xAccessor(d)))
     .attr("cy", (d) => yScale(yAccessor(d)))
     .attr("data-xvalue", (d) => xAccessor(d))
-    .attr("data-yvalue", (d) => parseTime(timeAccessor(d)))
+    .attr("data-yvalue", (d) => parsedTimeAccessor(d))
     .attr("fill", (d) => (dopingAccessor(d) === "" ? "#ff7f0e" : "#2463a5"))
     .attr("stroke", "black")
     .attr("stroke-width", "1px")
