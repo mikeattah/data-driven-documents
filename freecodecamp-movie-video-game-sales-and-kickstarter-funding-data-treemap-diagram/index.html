@@ -5,125 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="freeCodeCamp Project - D3.js - Visualize Data with a Treemap Diagram"
+      content="freeCodeCamp Project - D3.js - Visualization of Movies, Video Games Sales, and Kickstarter Funding Data with a Treemap Diagram"
     />
 
-    <title>Visualize Data with a Treemap Diagram</title>
-
-    <!-- jQuery Library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-    <!-- D3.js Library -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <title>
+      Visualization of Movies, Video Games Sales, and Kickstarter Funding Data
+      with a Treemap Diagram
+    </title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Roboto:wght@400&family=Montserrat:wght@400&family=Prata:wght@400&family=Inter:wght@300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&family=Roboto:wght@400&display=swap"
       rel="stylesheet"
     />
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" href="fcc-visualize-data-styles.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="container">
-      <div class="chart">
-        <nav class="nav_bar">
-          <a href="#">Video Game Data Set</a>
-          <span>|</span>
-          <a href="#">Movie Data Set</a>
-          <span>|</span>
-          <a href="#">Kickstarter Data Set</a>
-        </nav>
-        <div id="chart">
-          <h1 id="title">Video Game Sales</h1>
-          <p class="descriptions">
-            Top 100 Most Sold Video Games Grouped by Platform
-          </p>
-        </div>
-      </div>
-      <div id="legend"></div>
+
+    <nav id="nav-bar">
+      <ul class="nav-list">
+        <li>
+          <a href="#" id="video-game-sales">Video Game Data Set</a>
+        </li>
+        <li>|</li>
+        <li>
+          <a href="#" id="movie-sales">Movies Data Set</a>
+        </li>
+        <li>|</li>
+        <li>
+          <a href="#" id="kickerstarter-funding">Kickstarter Data Set</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div id="title-box">
+      <h1 id="title">Video Game Sales</h1>
+      <p class="description">
+        Top 100 Most Sold Video Games Grouped by Platform
+      </p>
     </div>
+
+    <div id="chart">
+      <div id="tooltip">
+        <p id="tooltip-name" class="tooltip-text"></p>
+        <p id="tooltip-category" class="tooltip-text"></p>
+        <p id="tooltip-value" class="tooltip-text"></p>
+        <div class="arrow"></div>
+      </div>
+      <div id="legend">
+        <!-- <div class="legend-item">
+          <div class="legend-item-box"></div>
+          <p class="legend-item-text"></p>
+        </div> -->
+      </div>
+    </div>
+
+    <!-- D3.js Library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- Custom Script -->
+    <script src="index.js"></script>
+
+    <!-- FCC Tests -->
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const kickstarter =
-            "https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/kickstarter-funding-data.json",
-          movies =
-            "https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/movie-data.json",
-          games =
-            "https://cdn.freecodecamp.org/testable-projects-fcc/data/tree_map/video-game-sales-data.json",
-          req = new XMLHttpRequest();
-
-        req.open("GET", url, true);
-        req.send();
-        req.onload = function () {
-          // elements will always have a 2:1 width to height ratio
-          // no matter what the zoom level is
-          const width = 900,
-            height = 600,
-            margin = 50,
-            padding = 0.1,
-            json = JSON.parse(req.responseText),
-            data = json.data,
-            maxX = d3.max(data, (d, i) => parseInt(d[0].slice(0, 4))),
-            minX = d3.min(data, (d, i) => parseInt(d[0].slice(0, 4))),
-            maxY = d3.max(data, (d, i) => d[1]),
-            minY = d3.min(data, (d, i) => d[1]),
-            xScale = d3
-              .scaleLinear()
-              .domain([minX, maxX])
-              .range([margin, width - margin]),
-            yScale = d3
-              .scaleLinear()
-              .domain([minY, maxY])
-              .range([height - margin, margin]);
-
-          // console.log(data, data.length, maxX, minX, maxY, minY);
-
-          const svg = d3
-            .select("#container")
-            .append("svg")
-            .attr("width", width)
-            .attr("height", height)
-            .attr("class", "canvas");
-
-          const g = svg.selectAll("g").data(data).join("g");
-
-          g.append("rect", (d, i) => d[1])
-            .attr("x", (d, i) => i + xScale(parseFloat(d[0].slice(0, 4))))
-            .attr("y", margin)
-            .attr("width", 2)
-            .attr("height", (d, i) => height - yScale(d[1]))
-            .style("fill", "#0070f3")
-            .style("class", "bars");
-
-          g.append("title")
-            .text((d) => d[0].slice(0, 4) + " " + "$" + d[1] + " Billion")
-            .attr("class", "text");
-
-          const xAxis = d3
-              .axisBottom()
-              .scale(xScale)
-              .tickFormat(d3.format("d")),
-            yAxis = d3.axisLeft().scale(yScale);
-
-          svg
-            .append("g")
-            .attr("transform", (d, i) => "translate(0," + margin * 11 + ")")
-            .attr("id", "x-axis")
-            .call(xAxis);
-
-          svg
-            .append("g")
-            .attr("transform", (d, i) => "translate(" + margin + ",0)")
-            .attr("id", "y-axis")
-            .call(yAxis);
-        };
-      });
-    </script>
   </body>
 </html>
