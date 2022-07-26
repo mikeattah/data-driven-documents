@@ -1,6 +1,9 @@
 const videoGameSales = "video-game-sales-data.json",
   movieSales = "movie-sales-data.json",
-  kickstarterFunding = "kickstarter-funding-data.json";
+  kickstarterFunding = "kickstarter-funding-data.json",
+  videoGameSalesElement = document.getElementById("video-game-sales"),
+  movieSalesElement = document.getElementById("movie-sales"),
+  kickstarterFundingElement = document.getElementById("kickstarter-funding");
 
 async function draw($data) {
   // Data
@@ -43,6 +46,17 @@ async function draw($data) {
       `translate(${dimensions.margins}, ${dimensions.margins})`
     );
 
+  // temporary text
+  ctr
+    .append("text")
+    .attr("text-anchor", "middle")
+    .attr(
+      "transform",
+      `translate(${dimensions.width * 0.45}, ${dimensions.height * 0.25})`
+    )
+    .style("font-size", "1.5rem")
+    .text($data);
+
   // Scales
   const xScale = d3
     .scaleLinear()
@@ -58,43 +72,31 @@ async function draw($data) {
 
   // Tooltip
   const tooltip = d3.select("#tooltip");
-
-  // Circles
-  ctr
-    .selectAll("circle")
-    .data(data)
-    .join("circle")
-    .attr("r", 6)
-    .attr("cx", (d) => xScale(xAccessor(d)))
-    .attr("cy", (d) => yScale(yAccessor(d)))
-    .attr("data-xvalue", (d) => xAccessor(d))
-    .attr("data-yvalue", (d) => parsedTimeAccessor(d))
-    .attr("fill", (d) => (dopingAccessor(d) === "" ? "#ff7f0e" : "#2463a5"))
-    .attr("stroke", "black")
-    .attr("stroke-width", "1px")
-    .classed("dot", true)
-    .on("touchmouse mouseenter", function (e, datum) {
-      // Tooltip
-      tooltip
-        .attr("data-year", datum.Year)
-        .style("display", "block")
-        .style("top", `${e.pageY - 275}px`)
-        .style("left", xScale(xAccessor(datum)) - 38 + "px");
-
-      tooltip.select(".athlete-name").text(nameAccessor(datum) + ": ");
-      tooltip.select(".athlete-nationality").text(nationalityAccessor(datum));
-      tooltip.select(".date-year").text(" " + xAccessor(datum) + ",");
-      tooltip.select(".date-time").text(" " + timeAccessor(datum));
-      tooltip.select(".description").text(dopingAccessor(datum));
-    })
-    .on("mouseleave", function () {
-      d3.select(".dot-hovered").remove();
-      tooltip.style("display", "none");
-    });
 }
 
 draw(videoGameSales);
 
-d3.select("#video-game-sales").on("click", () => draw(videoGameSales));
-d3.select("#movie-sales").on("click", () => draw(movieSales));
-d3.select("#kickstarter-funding").on("click", () => draw(kickstarterFunding));
+videoGameSalesElement.addEventListener(
+  "click",
+  () => {
+    // ...
+    draw(videoGameSales);
+  },
+  false
+);
+movieSalesElement.addEventListener(
+  "click",
+  () => {
+    // ...
+    draw(movieSales);
+  },
+  false
+);
+kickstarterFundingElement.addEventListener(
+  "click",
+  () => {
+    // ...
+    draw(kickstarterFunding);
+  },
+  false
+);

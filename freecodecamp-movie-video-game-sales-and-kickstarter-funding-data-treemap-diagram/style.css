@@ -14,10 +14,16 @@ body {
   align-items: center;
   font-family: "Poppins", "Roboto", sans-serif;
   background-color: #ccc;
+  color: #000;
 }
 
 a {
   text-decoration: none;
+  color: blue;
+}
+
+a:hover {
+  color: purple;
 }
 
 #nav-bar {
@@ -27,6 +33,7 @@ a {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
   background-color: #f7f7f7;
   margin-top: 25px;
   border-radius: 15px;
@@ -42,6 +49,11 @@ a {
 
 li {
   margin: 0 5px;
+  border-bottom: 2px solid #f7f7f7;
+}
+
+li:hover {
+  border-bottom: 2px solid purple;
 }
 
 #title-box {
