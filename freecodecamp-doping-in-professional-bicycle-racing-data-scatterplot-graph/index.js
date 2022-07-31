@@ -40,11 +40,12 @@ async function draw() {
     );
 
   // Scales
-  const xScale = d3
-    .scaleLinear()
-    .domain(d3.extent(data, xAccessor))
-    .range([0, dimensions.ctrWidth])
-    .clamp(true);
+  const xExtent = d3.extent(data, xAccessor),
+    xScale = d3
+      .scaleLinear()
+      .domain([xExtent[0] - 1, xExtent[1] + 1])
+      .range([0, dimensions.ctrWidth])
+      .clamp(true);
 
   const yScale = d3
     .scaleLinear()

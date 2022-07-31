@@ -59,7 +59,7 @@ body {
   border-radius: 5px;
 }
 
-#tooltip .athlete {
+.athlete {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -72,7 +72,7 @@ body {
   margin-right: 7px;
 }
 
-#tooltip .date {
+.date {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -81,10 +81,10 @@ body {
   padding-bottom: 5px;
 }
 
-#tooltip .description {
+.description {
 }
 
-#tooltip .arrow {
+.arrow {
   height: 0;
   width: 0;
   position: absolute;
@@ -105,7 +105,7 @@ body {
   font-size: 10px;
 }
 
-#legend .legend-item {
+.legend-item {
   width: 100%;
   display: flex;
   flex-direction: row;

@@ -1,6 +1,6 @@
 async function draw() {
   // Data
-  const data = await d3.json("data.json"); 
+  const data = await d3.json("data.json");
 
   // Dimensions
   let dimensions = {
@@ -9,16 +9,15 @@ async function draw() {
     margins: 75,
   };
 
-  const row = 5;
-  const col = Math.ceil(data.length / row);
-  const box = Math.ceil((dimensions.width - dimensions.margins * 2) / col);
+  const row = 12,
+    col = Math.ceil(data.length / row),
+    box = Math.ceil((dimensions.width - dimensions.margins * 2) / col);
 
   // Draw Image
   const svg = d3
     .select("#chart")
     .append("svg")
-    .attr("width", dimensions.width - dimensions.margins * 2)
-    .attr("height", dimensions.height - dimensions.margins * 2);
+    .attr("viewBox", `0 0 ${dimensions.width} ${dimensions.height}`);
 
   function heatmap(scale) {
     // Scales
